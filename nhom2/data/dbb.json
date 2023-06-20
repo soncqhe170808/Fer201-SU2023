@@ -8,7 +8,8 @@
             "Info": {
                 "phone": "0512989008",
                 "address": "Thái Hoà, Thạch Thất, Hà Nội",
-                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis."
+                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+                "fieldOfExpertise": "1"
             },
             "RoleId": 2,
             "BanStatus": 0,
@@ -22,7 +23,8 @@
             "Info": {
                 "phone": "0965651643",
                 "address": "80 Dịch Vọng Hậu, Cầu Giấy, Hà Nội",
-                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis."
+                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+                "fieldOfExpertise": "1"
             },
             "RoleId": 2,
             "BanStatus": 0,
@@ -36,7 +38,8 @@
             "Info": {
                 "phone": "0707929298",
                 "address": "Sơn Tây, Hà Nội",
-                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis."
+                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+                "fieldOfExpertise": "1"
             },
             "RoleId": 1,
             "BanStatus": 0,
@@ -50,8 +53,8 @@
             "Info": {
                 "phone": "0946110893",
                 "address": "Sơn Tây, Hà Nội",
-                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis."
-                
+                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+                "fieldOfExpertise": "1"
             },
             "RoleId": 1,
             "BanStatus": 0,
@@ -65,7 +68,8 @@
             "Info": {
                 "phone": "0512989008",
                 "address": "Phạm Hùng, Mễ Trì Hạ, Từ Liêm, Hà Nội",
-                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis."
+                "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+                "fieldOfExpertise": "1"
             },
             "RoleId": 2,
             "BanStatus": 0,
@@ -92,16 +96,16 @@
             "RoleText": "Company"
         }
     ],
-    "Admin":[
+    "Admin": [
         {
-            "id":1,
-            "email":"TrinhDinhNghia@gmail.com",
-            "password":"12345",
-            "imgPath":"https://i.ytimg.com/vi/Zr-qM5Vrd0g/maxresdefault.jpg",
-            "DisplayName":"Trịnh Đình Nghĩa"
+            "id": 1,
+            "email": "TrinhDinhNghia@gmail.com",
+            "password": "12345",
+            "imgPath": "https://i.ytimg.com/vi/Zr-qM5Vrd0g/maxresdefault.jpg",
+            "DisplayName": "Trịnh Đình Nghĩa"
         }
     ],
-    "AppStatus":[
+    "AppStatus": [
         {
             "id": 0,
             "StatusText": "pending"
@@ -115,173 +119,207 @@
             "StatusText": "accepted"
         }
     ],
-    "JobPost":[
+    "JobPost": [
         {
             "JobId": 1,
-            "JobName":"Java Web BackEnd",
-            "JobDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
-            "RecuitmentGoal": 5,
-            "PostDate":"2023-06-02",
-            "EndDate":"2023-07-02",
-            "UserId":"2",
-            "Cid":2
-
-        
-        },
-        {
-            "JobId": 2,
-            "JobName":"Networking engineering",
-            "JobDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
-            "RecuitmentGoal":1,
-            "PostDate":"2023-05-20",
-            "EndDate":"2023-08-01",
-            "UserId":"2",
-            "Cid":2
-        },
-        {
-            "JobId": 3,
-            "JobName":"Front end ReactJS developer",
+            "JobName": "Java Web BackEnd",
             "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
-            "RecuitmentGoal": 3,
-            "PostDate":"2023-05-20",
-            "EndDate":"2023-06-30",
-            "UserId":"1",
-            "Cid":9
-        },
-        {
-            "JobId": 4,
-            "JobName":"PHP BackEnd",
-            "JobDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
             "RecuitmentGoal": 5,
-            "PostDate":"2023-06-02",
-            "EndDate":"2023-07-02",
-            "UserId":"2",
-            "Cid":10
-        
-        }
-        
-    ],
-    "Application":[
-        {
-            "AppId":1,
-            "JobId": 1, 
-            "UserId": 3,
-            "ApplyDate":"2023-06-27",
-            "Status": 1
-      
-        },
-        {
-            "AppId":2,
-            "JobId":1, 
-            "UserId":4,
-            "ApplyDate":"2023-05-22",
+            "PostDate": "2023-06-02",
+            "EndDate": "2023-07-02",
+            "UserId": "2",
+            "Cid": 2,
             "Status":3
         },
         {
-            "AppId":3,
-            "JobId":2, 
-            "UserId":4,
-            "ApplyDate":"2023-05-25",
-            "Status":2
+            "JobId": 2,
+            "JobName": "Networking engineering",
+            "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+            "RecuitmentGoal": 1,
+            "PostDate": "2023-05-20",
+            "EndDate": "2023-08-01",
+            "UserId": "2",
+            "Cid": 2,
+            "Status":3
         },
         {
-            "AppId":4,
-            "JobId":3, 
-            "UserId":3,
-            "ApplyDate":"2023-06-30",
-            "Status":2
+            "JobId": 3,
+            "JobName": "Front end ReactJS developer",
+            "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+            "RecuitmentGoal": 3,
+            "PostDate": "2023-05-20",
+            "EndDate": "2023-06-30",
+            "UserId": "1",
+            "Cid": 9,
+            "Status":3
+        },
+        {
+            "JobId": 4,
+            "JobName": "PHP BackEnd",
+            "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+            "RecuitmentGoal": 5,
+            "PostDate": "2023-06-02",
+            "EndDate": "2023-07-02",
+            "UserId": "2",
+            "Cid": 10,
+            "Status":1
         }
     ],
-    "Contact":[
+    "JobStatus": [
         {
-            "Contactid":1,
+            "id": 1,
+            "text": "pending"
+        },
+        {
+            "id": 2,
+            "text": "rejected"
+        },
+        {
+            "id": 3,
+            "text": "active"
+        },
+        {
+            "id": 4,
+            "text": "closed"
+        }
+    ],
+    "Application": [
+        {
+            "AppId": 1,
+            "JobId": 1,
+            "UserId": 3,
+            "ApplyDate": "2023-06-27",
+            "Status": 1,
+            "OnlineCv": "https://www.youtube.com/watch?v=jRPjLb3ZjCo&list=RDjkfLbg_aMbA&index=4&ab_channel=Masew"
+        },
+        {
+            "AppId": 2,
+            "JobId": 1,
+            "UserId": 4,
+            "ApplyDate": "2023-05-22",
+            "Status": 3,
+            "OnlineCv": "https://www.youtube.com/watch?v=jRPjLb3ZjCo&list=RDjkfLbg_aMbA&index=4&ab_channel=Masew"
+        },
+        {
+            "AppId": 3,
+            "JobId": 2,
+            "UserId": 4,
+            "ApplyDate": "2023-05-25",
+            "Status": 2,
+            "OnlineCv": "https://www.youtube.com/watch?v=jRPjLb3ZjCo&list=RDjkfLbg_aMbA&index=4&ab_channel=Masew"
+        },
+        {
+            "AppId": 4,
+            "JobId": 3,
+            "UserId": 3,
+            "ApplyDate": "2023-06-30",
+            "Status": 2,
+            "OnlineCv": "https://www.youtube.com/watch?v=jRPjLb3ZjCo&list=RDjkfLbg_aMbA&index=4&ab_channel=Masew"
+        }
+    ],
+    "Contact": [
+        {
+            "Contactid": 1,
             "User1Id": 3,
             "User2Id": 4
         },
         {
-            "Contactid":2,
+            "Contactid": 2,
             "User1Id": 1,
             "User2Id": 3
         },
         {
-            "Contactid":3,
+            "Contactid": 3,
             "User1Id": 1,
             "User2Id": 4
         },
         {
-            "Contactid":4,
+            "Contactid": 4,
             "User1Id": 2,
             "User2Id": 4
         },
         {
-            "Contactid":5,
+            "Contactid": 5,
             "User1Id": 2,
             "User2Id": 3
         }
     ],
-    "Message":[
+    "Message": [
         {
-            "mid":1,
-            "Contactid":1,
-            "content":"mmg"
+            "mid": 1,
+            "Contactid": 1,
+            "content": "mmg"
         },
         {
-            "mid":2,
-            "Contactid":2,
-            "content":"mmg"
+            "mid": 2,
+            "Contactid": 2,
+            "content": "mmg"
         },
         {
-            "mid":3,
-            "Contactid":3,
-            "content":"mmg"
+            "mid": 3,
+            "Contactid": 3,
+            "content": "mmg"
         },
         {
-            "mid":4,
-            "Contactid":4,
-            "content":"mmg"
+            "mid": 4,
+            "Contactid": 4,
+            "content": "mmg"
         }
     ],
-    "Category":[
+    "Category": [
         {
-            "Cid":1,
-            "name":"JavaScript"
+            "Cid": 1,
+            "name": "JavaScript"
         },
         {
-            "Cid":2,
-            "name":"Java"
+            "Cid": 2,
+            "name": "Java"
         },
         {
-            "Cid":3,
-            "name":"C++"
+            "Cid": 3,
+            "name": "C++"
         },
         {
-            "Cid":4,
-            "name":"C"
+            "Cid": 4,
+            "name": "C"
         },
         {
-            "Cid":5,
-            "name":"HTML/CSS"
+            "Cid": 5,
+            "name": "HTML/CSS"
         },
         {
-            "Cid":6,
-            "name":"Python"
+            "Cid": 6,
+            "name": "Python"
         },
         {
-            "Cid":7,
-            "name":".Net"
+            "Cid": 7,
+            "name": ".Net"
         },
         {
-            "Cid":8,
-            "name":"NodeJS"
+            "Cid": 8,
+            "name": "NodeJS"
         },
         {
-            "Cid":9,
-            "name":"ReactJS"
+            "Cid": 9,
+            "name": "ReactJS"
         },
         {
-            "Cid":10,
-            "name":"PHP"
+            "Cid": 10,
+            "name": "PHP"
+        }
+    ],
+    "FieldOfExpertise": [
+        {
+            "id": 1,
+            "FieldOfExpertise": "Software Engineering"
+        },
+        {
+            "id": 2,
+            "FieldOfExpertise": "Digital Art Design"
+        },
+        {
+            "id": 3,
+            "FieldOfExpertise": "Artificial intelligence"
         }
     ]
-    
 }
