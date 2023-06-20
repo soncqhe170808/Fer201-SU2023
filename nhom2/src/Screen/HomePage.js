@@ -7,6 +7,8 @@ import "../style/stylingSon.css"
 export default function HomePage() {
   return (
     <DefaultTemplate>
+      <div className="row mock">
+      </div>
       <div className="row Banner">
         <BannerCarousel/>
       </div>

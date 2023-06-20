@@ -4,18 +4,15 @@
 .Footer{
     height: 50px !important;
 }
-.Header ul{
-    list-style: none;
-    padding-left: 100px;
-}
-.Header a{
-    color: white;
+.Active-nav, .InActive-nav{
+    display: inline-block;
+    color: #4b4b4b;
+    padding: 15px 30px !important;
+    margin-right: 20px;
     text-decoration: none;
-    padding: 20px 5px;
 }
-
 .Active-nav{
-    background-color: rgb(175, 175, 97);
+    font-weight: 900;
 }
 .right{
     display: flex;
@@ -102,4 +99,7 @@
     border-radius: 50%;
     width: 350px;
     height: 350px;
+}
+.mock{
+    height: 130px;
 }
