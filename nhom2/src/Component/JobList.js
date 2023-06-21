@@ -16,6 +16,7 @@ export default function Joblist() {
   const [JobList, setJobList] = useState([]);
   const [companyList, setCompanyList] = useState([]);
   const [Category, setCategory] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:9990/JobPost")
       .then((res) => res.json())
@@ -37,6 +38,7 @@ export default function Joblist() {
         setCategory(result);
       });
   }, []);
+  
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
