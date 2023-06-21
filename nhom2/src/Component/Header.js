@@ -1,5 +1,5 @@
 import { Col, Row } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../style/stylingSon.css";
 import "../style/main.css"
 export default function Header() {
@@ -46,7 +46,8 @@ export default function Header() {
               <NavLink to="/PersonalProfile" className={({ isActive })=>(isActive?"Active-nav":"InActive-nav")}>Personal Profile</NavLink>
               </li>
               <li class="nav-card-item-right create-account">
-                <a class="nav-link" href="#">Create account</a>
+                {/* <a class="nav-link" href="#">Create account</a> */}
+                <Link to={'/register'} className="nav-link">Create account</Link>
               </li>       
             </ul>
           </div>
