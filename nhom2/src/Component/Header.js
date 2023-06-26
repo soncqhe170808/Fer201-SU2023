@@ -4,7 +4,10 @@ import "../style/stylingSon.css";
 import "../style/main.css"
 export default function Header() {
   return (
+    
     <Row className="Header">
+       <div className="row mock">
+      </div>
       {/* <Col className="col-6 left">
                 <ul>
                     <li>
