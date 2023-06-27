@@ -16,7 +16,7 @@ const Register = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:9990/user")
+        fetch("http://localhost:9999/user")
             .then((response) => response.json())
             .then((data) => {
                 const sortedUsers = data.sort((a, b) => a.id - b.id);
@@ -32,7 +32,7 @@ const Register = () => {
     }, []);
 
     useEffect(() => {
-        fetch("http://localhost:9990/FieldOfExpertise").then(res => res.json())
+        fetch("http://localhost:9999/FieldOfExpertise").then(res => res.json())
             .then(result => {
                 FieldOfExpertisechange(result);
             })
@@ -80,7 +80,7 @@ const Register = () => {
             BanStatus: 0,
         };
         if (IsValidate()) {
-            fetch("http://localhost:9990/user", {
+            fetch("http://localhost:9999/user", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(regobj),

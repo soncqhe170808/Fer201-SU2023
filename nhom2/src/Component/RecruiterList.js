@@ -9,7 +9,7 @@ export default function RecruiterList() {
   const [ApplicationList, setApplicationList] = useState([]);
   const [MostAppliedJob, setMostAppliedJob] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:9990/user")
+    fetch("http://localhost:9999/user")
       .then((res) => res.json())
       .then((result) => {
         setRecruiterList(result.filter((r) => r.RoleId == 2));

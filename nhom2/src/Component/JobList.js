@@ -18,21 +18,21 @@ export default function Joblist() {
   const [Category, setCategory] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9990/JobPost")
+    fetch("http://localhost:9999/JobPost")
       .then((res) => res.json())
       .then((result) => {
         setJobList(result);
       });
   }, []);
   useEffect(() => {
-    fetch("http://localhost:9990/user")
+    fetch("http://localhost:9999/user")
       .then((res) => res.json())
       .then((result) => {
         setCompanyList(result);
       });
   }, []);
   useEffect(() => {
-    fetch("http://localhost:9990/Category")
+    fetch("http://localhost:9999/Category")
       .then((res) => res.json())
       .then((result) => {
         setCategory(result);

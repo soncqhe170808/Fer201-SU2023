@@ -3,6 +3,16 @@ import { Link, NavLink } from "react-router-dom";
 import "../style/stylingSon.css";
 import "../style/main.css"
 export default function Header() {
+ 
+  // const checkLoggedIn = (e) =>{
+  //   currUser = sessionStorage.getItem("currUser");
+  //   if(currUser.role !== 1){
+  //     alert("this functionality is not accessible");
+  //     window.location.href = "/";
+  //   }else{
+  //     alert("welcome admin");
+  //   }
+  // }
   return (
     
     <Row className="Header">
