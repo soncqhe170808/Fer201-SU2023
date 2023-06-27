@@ -121,7 +121,7 @@
       "RecuitmentGoal": 5,
       "PostDate": "2023-06-02",
       "EndDate": "2023-07-02",
-      "UserId": "2",
+      "UserId": 2,
       "Cid": 2,
       "Status": 3
     },
@@ -132,9 +132,9 @@
       "RecuitmentGoal": 1,
       "PostDate": "2023-05-20",
       "EndDate": "2023-08-01",
-      "UserId": "2",
+      "UserId": 2,
       "Cid": 2,
-      "Status": 3
+      "Status": 1
     },
     {
       "JobId": 3,
@@ -143,7 +143,7 @@
       "RecuitmentGoal": 3,
       "PostDate": "2023-05-20",
       "EndDate": "2023-06-30",
-      "UserId": "1",
+      "UserId": 1,
       "Cid": 9,
       "Status": 3
     },
@@ -154,9 +154,20 @@
       "RecuitmentGoal": 5,
       "PostDate": "2023-06-02",
       "EndDate": "2023-07-02",
-      "UserId": "2",
+      "UserId": 2,
       "Cid": 10,
-      "Status": 1
+      "Status": 3
+    },
+    {
+      "JobId": 5,
+      "JobName": "React Native Front end Developer",
+      "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+      "RecuitmentGoal": 5,
+      "PostDate": "2023-06-02",
+      "EndDate": "2023-07-02",
+      "UserId": 5,
+      "Cid": 11,
+      "Status": 3
     }
   ],
   "JobStatus": [
@@ -202,6 +213,20 @@
     {
       "AppId": 4,
       "JobId": 3,
+      "UserId": 3,
+      "ApplyDate": "2023-06-30",
+      "Status": 2
+    },
+    {
+      "AppId": 5,
+      "JobId": 3,
+      "UserId": 3,
+      "ApplyDate": "2023-06-30",
+      "Status": 2
+    },
+    {
+      "AppId": 6,
+      "JobId": 5,
       "UserId": 3,
       "ApplyDate": "2023-06-30",
       "Status": 2
@@ -296,6 +321,10 @@
     {
       "Cid": 10,
       "name": "PHP"
+    },
+    {
+      "Cid": 11,
+      "name": "ReactNative"
     }
   ],
   "FieldOfExpertise": [

@@ -16,7 +16,7 @@ export default function Joblist() {
   const [JobList, setJobList] = useState([]);
   const [companyList, setCompanyList] = useState([]);
   const [Category, setCategory] = useState([]);
-
+  const [ApplicationList, setApplicationList] = useState([]);
   useEffect(() => {
     fetch("http://localhost:9999/JobPost")
       .then((res) => res.json())
@@ -32,13 +32,33 @@ export default function Joblist() {
       });
   }, []);
   useEffect(() => {
+    fetch("http://localhost:9999/Application")
+      .then((res) => res.json())
+      .then((result) => {
+        setApplicationList(result);
+      });
+  }, []);
+  useEffect(() => {
     fetch("http://localhost:9999/Category")
       .then((res) => res.json())
       .then((result) => {
         setCategory(result);
       });
   }, []);
-  
+
+  const ApplicationCount = {};
+  ApplicationList.map((app)=>{
+    let JobId = app.JobId;
+    ApplicationCount[JobId] = (ApplicationCount[JobId] || 0) + 1;
+  })
+  console.log(ApplicationCount);
+  const sortJobs = JobList.filter((j)=>j.Status === 3).sort((jobA, jobB)=>{
+    const ApplicationCountA = ApplicationCount[jobA.JobId] || 0;
+    const ApplicationCountB = ApplicationCount[jobB.JobId] || 0;
+    return ApplicationCountB - ApplicationCountA;
+  })
+  const topThreeMostApplied = sortJobs.slice(0, 3);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -60,7 +80,7 @@ export default function Joblist() {
   return (
     <Row className="JobList">
       <Row className="JobListHeader">
-        <h3>Các Jobs mới</h3>
+        <h3>Những Công Việc Hot nhất</h3>
         <Link to="#">Xem tất cả</Link>
       </Row>
       <Row className="JobLisCarousel">
@@ -73,7 +93,7 @@ export default function Joblist() {
           partialVisible={false}
           dotListClass="custom-dot-list-style"
         >
-          {JobList.map((j) => (
+          {topThreeMostApplied.map((j) => (
             <div className="JobCard" key={j.JobId}>
               <div className="JobCardBox">
                 <div className="JobCardLeft col-4">

@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export default function PersonalProfile() {
   const [currUser, setCurrUser] = useState({});
-  const [currUserId, setCurrUserId] = useState(3);
+  const [currUserId, setCurrUserId] = useState(0);
   const [role, setRole] = useState(0);
   const [email, setEmail] = useState("");
   const [Name, setName] = useState("");
@@ -20,27 +20,40 @@ export default function PersonalProfile() {
   const [FieldOfExpertise, setFieldOfExpertise] = useState(1);
   const [BanStatus, setBanStatus] = useState(0);
 
+  // console.log("aaa"+currUser.id);
+  // useEffect(() => {
+
+  // }, []);
+
   useEffect(() => {
     // setCurrUserId(3); // Update the currUserId value using the setter function
-    console.log(currUserId);
-    fetch(`http://localhost:9999/user/${currUserId}`)
-      .then((res) => res.json())
-      .then((result) => {
-        setCurrUser(result);
-        setEmail(result.email);
-        setName(result.Name);
-        setAddress(result.address);
-        // console.log(result.Info.address);
-        setPhonenumber(result.phone);
-        setIntroduction(result.Introduction);
-        setOnlineCv(result.OnlineCv);
-        setRole(result.RoleId);
-        setPassword(result.password);
-        setImgPath(result.imgPath);
-        setFieldOfExpertise(result.fieldOfExpertise);
-        setBanStatus(result.BanStatus);
-      });
-  }, currUserId); // Include currUserId as a dependency in the useEffect dependency array
+
+    setCurrUser(JSON.parse(sessionStorage.getItem("currUser")));
+
+    if (JSON.parse(sessionStorage.getItem("currUser")) == null) {
+      window.location.href = "/login";
+    }
+    if (currUser.id != null) {
+      fetch("http://localhost:9999/user/" + currUser.id)
+        .then((res) => res.json())
+        .then((result) => {
+          setCurrUser(result);
+          setEmail(result.email);
+          setName(result.Name);
+          setAddress(result.address);
+          // console.log(result.Info.address);
+          setPhonenumber(result.phone);
+          setIntroduction(result.Introduction);
+          setOnlineCv(result.OnlineCv);
+          setRoleId(result.RoleId);
+
+          setPassword(result.password);
+          setImgPath(result.imgPath);
+          setFieldOfExpertise(result.fieldOfExpertise);
+          setBanStatus(result.BanStatus);
+        });
+    }
+  }, currUser.id); // Include currUserId as a dependency in the useEffect dependency array
   useEffect(() => {
     // setCurrUserId(3); // Update the currUserId value using the setter function
 
@@ -49,7 +62,7 @@ export default function PersonalProfile() {
       .then((result) => {
         setRole(result);
       });
-  }, currUser.RoleId);
+  });
   const edit = () => {
     var input = document.getElementsByClassName("UserInfoInput");
     if (input.length == 0) {
@@ -159,7 +172,7 @@ export default function PersonalProfile() {
   };
   return (
     <DefaultTemplate>
-      <ToastContainer/>
+      <ToastContainer />
       <Row className="col-12 personalInfo">
         <Col className="Avatar col-lg-4 col-sm-12">
           {(() => {
