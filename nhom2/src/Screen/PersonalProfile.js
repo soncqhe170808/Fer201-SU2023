@@ -17,7 +17,8 @@ export default function PersonalProfile() {
   const [RoleId, setRoleId] = useState(1);
   const [password, setPassword] = useState("");
   const [imgPath, setImgPath] = useState("");
-  const [FieldOfExpertise, setFieldOfExpertise] = useState(1);
+  const [fieldOfExpertise, setFieldOfExpertise] = useState(1);
+  const [Experience, setExperience] = useState(0);
   const [BanStatus, setBanStatus] = useState(0);
 
   // console.log("aaa"+currUser.id);
@@ -27,33 +28,35 @@ export default function PersonalProfile() {
 
   useEffect(() => {
     // setCurrUserId(3); // Update the currUserId value using the setter function
-
     setCurrUser(JSON.parse(sessionStorage.getItem("currUser")));
 
     if (JSON.parse(sessionStorage.getItem("currUser")) == null) {
       window.location.href = "/login";
     }
-    if (currUser.id != null) {
-      fetch("http://localhost:9999/user/" + currUser.id)
-        .then((res) => res.json())
-        .then((result) => {
-          setCurrUser(result);
-          setEmail(result.email);
-          setName(result.Name);
-          setAddress(result.address);
-          // console.log(result.Info.address);
-          setPhonenumber(result.phone);
-          setIntroduction(result.Introduction);
-          setOnlineCv(result.OnlineCv);
-          setRoleId(result.RoleId);
 
-          setPassword(result.password);
-          setImgPath(result.imgPath);
-          setFieldOfExpertise(result.fieldOfExpertise);
-          setBanStatus(result.BanStatus);
-        });
-    }
-  }, currUser.id); // Include currUserId as a dependency in the useEffect dependency array
+    fetch(
+      "http://localhost:9999/user/" +
+        JSON.parse(sessionStorage.getItem("currUser")).id
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        setCurrUser(result);
+        setEmail(result.email);
+        setName(result.Name);
+        setAddress(result.address);
+        // console.log(result.Info.address);
+        setPhonenumber(result.phone);
+        setIntroduction(result.Introduction);
+        setOnlineCv(result.OnlineCv);
+        setRoleId(result.RoleId);
+
+        setPassword(result.password);
+        setImgPath(result.imgPath);
+        setFieldOfExpertise(result.fieldOfExpertise);
+        setExperience(result.Experience);
+        setBanStatus(result.BanStatus);
+      });
+  }, currUser); // Include currUserId as a dependency in the useEffect dependency array
   useEffect(() => {
     // setCurrUserId(3); // Update the currUserId value using the setter function
 
@@ -62,7 +65,7 @@ export default function PersonalProfile() {
       .then((result) => {
         setRole(result);
       });
-  });
+  }, currUser);
   const edit = () => {
     var input = document.getElementsByClassName("UserInfoInput");
     if (input.length == 0) {
@@ -128,11 +131,12 @@ export default function PersonalProfile() {
       phone,
       address,
       Introduction,
-      FieldOfExpertise,
+      fieldOfExpertise,
       RoleId,
       BanStatus,
       Name,
       OnlineCv,
+      Experience,
     };
     if (ValidateInput()) {
       fetch("http://localhost:9999/user/" + currUser.id, {
@@ -271,6 +275,35 @@ export default function PersonalProfile() {
                   value={OnlineCv}
                   style={{ marginLeft: "70px", color: "#1098dc" }}
                   onChange={(e) => setOnlineCv(e.target.value)}
+                  readOnly
+                />
+              </div>
+              {/* {() => {
+                if (Experience != -1) {
+                  return (
+                    <div className="InputField">
+                      <h3>Years Of Experience&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                      <input
+                        className="UserInfoInput"
+                        type="number"
+                        value={Experience}
+                        style={{ marginLeft: "70px", color: "#1098dc" }}
+                        onChange={(e) => setExperience(e.target.value)}
+                        readOnly
+                      />
+                    </div>
+                  );
+                }
+              }} */}
+              <div className="InputField">
+                <h3>Experience: </h3>
+                <input
+                  className="UserInfoInput"
+                  type="number"
+                  value={Experience}
+                  style={{ marginLeft: "85px" }}
+                  onChange={(e) => setExperience(e.target.value)}
+                  min={0}
                   readOnly
                 />
               </div>

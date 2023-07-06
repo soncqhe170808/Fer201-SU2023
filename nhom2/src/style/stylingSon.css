@@ -165,19 +165,22 @@
     text-decoration: wavy;
 }
 
-.UserInfoWrapper input, textarea{
+.UserInfoWrapper input,
+textarea {
     width: 60%;
-   
+
 }
-.UserInfoInput{
-    
+
+.UserInfoInput {
+
     border: none !important;
     outline: none;
     font-size: 150%;
 }
-.UserInfoInputEdit{
+
+.UserInfoInputEdit {
     border: none !important;
-    border-bottom: 1px solid rgb(146,211,94) !important;
+    border-bottom: 1px solid rgb(146, 211, 94) !important;
     outline: none;
     font-size: 150%;
 }
@@ -213,20 +216,91 @@
     background-color: #92d35e;
     border-radius: 10px;
 }
-.searchBar{
+
+.searchBar {
     text-align: center;
+    margin-bottom: 20px;
 }
-.searchBar input{
+
+.searchBar input {
     margin: 10px 0;
     width: 30%;
     outline: 2px solid #92D35E;
     border-radius: 15px 0 0 15px;
     height: 30px;
 }
-.searchBar button{
+
+.searchBar button {
     padding: 5px 10px;
     background-color: #92D35E;
     color: white;
     border-radius: 0 15px 15px 0;
     border: none;
+}
+.proceedLink{
+    text-decoration: none !important;
+}
+.Applications {
+    background-color: #ededde;
+    height: 140px;
+    margin: 20px auto;
+    padding: 0 !important;
+    border-radius: 25px;
+    border: 1px solid #8a8a8a;
+    display: flex;
+    color: #757575;
+    
+}
+
+.ApplicantImg {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px 0 0 25px;
+}
+.applicantInfo{
+    padding: 5px 15px;
+}
+.field a:hover{
+    font-weight: 400;
+    color: rgb(100, 214, 214) !important;
+}
+.ApplicantImgProceed{
+    height: 227px;
+    margin: 30px 0 !important;
+}
+#ProceedApplicantImg{
+    width: 15%;
+    border-radius: 50%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.ApplicantInfo{
+    width: 40% !important;
+    text-align: left;
+    margin: 0 auto !important;
+}
+
+.Wrapper{
+    text-align: center;
+}
+.Action{
+    margin: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+.Action button{
+    width: 15%;
+    margin: 15px;
+    padding: 5px 0;
+    border-radius: 25px;
+}
+.Action button:first-child{
+    background-color: #9fd573;
+    color: white;
+}
+.Action button:nth-child(2){
+    background-color: #ac3116;
+    color: white;
 }

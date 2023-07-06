@@ -8,11 +8,12 @@
       "phone": "0512989008",
       "address": "Thái Hoà, Thạch Thất, Hà Nội",
       "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
-      "fieldOfExpertise": "1",
+      "fieldOfExpertise": 1,
       "RoleId": 2,
       "BanStatus": 0,
       "Name": "Công ty TNHH Phần mềm Fpt Fsoft",
-      "OnlineCv": "http://sample.net/donkey#sea"
+      "OnlineCv": "http://sample.net/donkey#sea",
+      "Experience": -1
     },
     {
       "id": 2,
@@ -22,11 +23,12 @@
       "phone": "0965651643",
       "address": "80 Dịch Vọng Hậu, Cầu Giấy, Hà Nội",
       "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
-      "fieldOfExpertise": "1",
+      "fieldOfExpertise": 1,
       "RoleId": 2,
       "BanStatus": 0,
       "Name": "Viettel Software Service",
-      "OnlineCv": "http://sample.net/donkey#sea"
+      "OnlineCv": "http://sample.net/donkey#sea",
+      "Experience": -1
     },
     {
       "email": "chuquyson4@gmail.com",
@@ -35,10 +37,12 @@
       "phone": "0363938085",
       "address": "167 phùng khắc khoan, sơn tây",
       "Introduction": "Make sure you have followed the necessary steps to integrate the toast notification library properly into your application. Double-check the documentation of the specific toast library you are using for detailed instructions on how to set it up correctly.",
+      "fieldOfExpertise": 2,
       "RoleId": 1,
       "BanStatus": 0,
       "Name": "chu quy son",
       "OnlineCv": "http://sample.net/donkey#sea",
+      "Experience": "4",
       "id": 3
     },
     {
@@ -49,11 +53,12 @@
       "phone": "0946110893",
       "address": "Sơn Tây, Hà Nội",
       "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
-      "fieldOfExpertise": "1",
+      "fieldOfExpertise": 1,
       "RoleId": 1,
       "BanStatus": 0,
       "Name": "Nguyễn Văn Quý",
-      "OnlineCv": "http://sample.net/donkey#sea"
+      "OnlineCv": "http://sample.net/donkey#sea",
+      "Experience": 2
     },
     {
       "id": 5,
@@ -63,11 +68,12 @@
       "phone": "0512989008",
       "address": "Phạm Hùng, Mễ Trì Hạ, Từ Liêm, Hà Nội",
       "Introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
-      "fieldOfExpertise": "1",
+      "fieldOfExpertise": 1,
       "RoleId": 2,
       "BanStatus": 0,
       "Name": "Công Ty Cho Thuê Tài Chính Tnhh Mtv Quốc Tế Chailease",
-      "OnlineCv": "http://sample.net/donkey#sea"
+      "OnlineCv": "http://sample.net/donkey#sea",
+      "Experience": -1
     }
   ],
   "BanStatus": [
@@ -115,7 +121,7 @@
   ],
   "JobPost": [
     {
-      "JobId": 1,
+      "id": 1,
       "JobName": "Java Web BackEnd",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 5,
@@ -126,7 +132,7 @@
       "Status": 3
     },
     {
-      "JobId": 2,
+      "id": 2,
       "JobName": "Networking engineering",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 1,
@@ -137,7 +143,7 @@
       "Status": 1
     },
     {
-      "JobId": 3,
+      "id": 3,
       "JobName": "Front end ReactJS developer",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 3,
@@ -148,7 +154,7 @@
       "Status": 3
     },
     {
-      "JobId": 4,
+      "id": 4,
       "JobName": "PHP BackEnd",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 5,
@@ -159,7 +165,7 @@
       "Status": 3
     },
     {
-      "JobId": 5,
+      "id": 5,
       "JobName": "React Native Front end Developer",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 5,
@@ -190,46 +196,46 @@
   ],
   "Application": [
     {
-      "AppId": 1,
+      "id": 1,
       "JobId": 1,
       "UserId": 3,
       "ApplyDate": "2023-06-27",
-      "Status": 1
+      "Status": 0
     },
     {
-      "AppId": 2,
+      "id": 2,
       "JobId": 1,
       "UserId": 4,
       "ApplyDate": "2023-05-22",
-      "Status": 3
+      "Status": 0
     },
     {
-      "AppId": 3,
+      "id": 3,
       "JobId": 2,
       "UserId": 4,
       "ApplyDate": "2023-05-25",
-      "Status": 2
+      "Status": 0
     },
     {
-      "AppId": 4,
+      "id": 4,
       "JobId": 3,
       "UserId": 3,
       "ApplyDate": "2023-06-30",
-      "Status": 2
+      "Status": 0
     },
     {
-      "AppId": 5,
+      "id": 5,
       "JobId": 3,
-      "UserId": 3,
+      "UserId": 4,
       "ApplyDate": "2023-06-30",
-      "Status": 2
+      "Status": 0
     },
     {
-      "AppId": 6,
+      "id": 6,
       "JobId": 5,
       "UserId": 3,
       "ApplyDate": "2023-06-30",
-      "Status": 2
+      "Status": 0
     }
   ],
   "Contact": [
