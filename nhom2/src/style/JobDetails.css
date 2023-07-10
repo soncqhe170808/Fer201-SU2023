@@ -1,0 +1,20 @@
+.job-details-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .job-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .job-details-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+  
