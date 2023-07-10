@@ -6,6 +6,7 @@ import Register from './Screen/Register';
 import Login from './Component/Auth';
 import ApplicationList from './Screen/ApplicationList';
 import ProceedApplication from './Screen/ProceedApplication';
+import JobData from './Screen/JobData';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/PersonalProfile' element={<PersonalProfile/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/JobData' element={<JobData/>}/>
       <Route path='/ApplicationList/:JobId' element={<ApplicationList/>}/>
       <Route path='/ProceedApplication/:ApplicationId' element={<ProceedApplication/>}/>
     </Routes>
