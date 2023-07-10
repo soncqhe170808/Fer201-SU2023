@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import DefaultTemplate from "../Template/DefaultTemplate";
 import "../style/stylingSon.css";
-import { Col, Form, Image, Row } from "react-bootstrap";
+import { Button, Col, Form, Image, Row, Table } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CompanyJobList from "../Component/CompanyJobList";
 export default function PersonalProfile() {
   const [currUser, setCurrUser] = useState({});
   const [currUserId, setCurrUserId] = useState(0);
@@ -29,33 +30,32 @@ export default function PersonalProfile() {
   useEffect(() => {
     // setCurrUserId(3); // Update the currUserId value using the setter function
     setCurrUser(JSON.parse(sessionStorage.getItem("currUser")));
-
     if (JSON.parse(sessionStorage.getItem("currUser")) == null) {
       window.location.href = "/login";
+    } else {
+      fetch(
+        "http://localhost:9999/user/" +
+          JSON.parse(sessionStorage.getItem("currUser")).id
+      )
+        .then((res) => res.json())
+        .then((result) => {
+          setCurrUser(result);
+          setEmail(result.email);
+          setName(result.Name);
+          setAddress(result.address);
+          // console.log(result.Info.address);
+          setPhonenumber(result.phone);
+          setIntroduction(result.Introduction);
+          setOnlineCv(result.OnlineCv);
+          setRoleId(result.RoleId);
+
+          setPassword(result.password);
+          setImgPath(result.imgPath);
+          setFieldOfExpertise(result.fieldOfExpertise);
+          setExperience(result.Experience);
+          setBanStatus(result.BanStatus);
+        });
     }
-
-    fetch(
-      "http://localhost:9999/user/" +
-        JSON.parse(sessionStorage.getItem("currUser")).id
-    )
-      .then((res) => res.json())
-      .then((result) => {
-        setCurrUser(result);
-        setEmail(result.email);
-        setName(result.Name);
-        setAddress(result.address);
-        // console.log(result.Info.address);
-        setPhonenumber(result.phone);
-        setIntroduction(result.Introduction);
-        setOnlineCv(result.OnlineCv);
-        setRoleId(result.RoleId);
-
-        setPassword(result.password);
-        setImgPath(result.imgPath);
-        setFieldOfExpertise(result.fieldOfExpertise);
-        setExperience(result.Experience);
-        setBanStatus(result.BanStatus);
-      });
   }, currUser); // Include currUserId as a dependency in the useEffect dependency array
   useEffect(() => {
     // setCurrUserId(3); // Update the currUserId value using the setter function
@@ -65,7 +65,8 @@ export default function PersonalProfile() {
       .then((result) => {
         setRole(result);
       });
-  }, currUser);
+  }, [currUser]);
+
   const edit = () => {
     var input = document.getElementsByClassName("UserInfoInput");
     if (input.length == 0) {
@@ -174,150 +175,176 @@ export default function PersonalProfile() {
         });
     }
   };
-  return (
-    <DefaultTemplate>
-      <ToastContainer />
-      <Row className="col-12 personalInfo">
-        <Col className="Avatar col-lg-4 col-sm-12">
+  const HandleLogOut = (e) => {
+    sessionStorage.removeItem("currUser");
+    window.location.href = "/";
+  };
+  if (JSON.parse(sessionStorage.getItem("currUser")) == null) {
+    window.location.href = "/login";
+  } else {
+    return (
+      <DefaultTemplate>
+        <ToastContainer />
+        <Row className="col-12 personalInfo">
+          <Col className="Avatar col-lg-4 col-sm-12">
+            {(() => {
+              if (currUser.imgPath != null && currUser.img != "") {
+                return <Image src={currUser.imgPath} />;
+              } else {
+                return (
+                  <Image
+                    src={process.env.PUBLIC_URL + "asset/img/tempAvatar.jpg"}
+                  />
+                );
+              }
+            })()}
+            <div className="Quote">
+              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing el"</p>
+            </div>
+            <div className="EditProfileButton">
+              <button id="edit" onClick={() => edit()}>
+                Edit Profile
+              </button>
+
+              <button
+                onClick={(e) => saveChanges(e)}
+                id="save"
+                style={{ display: "none" }}
+              >
+                Save Changes
+              </button>
+            </div>
+          </Col>
+          <Col className="UserInfo col-lg-8 col-sm-12">
+            <div className="col-lg-10 UserInfoWrapper">
+              <Form>
+                <div className="InputField">
+                  <h3>UserName:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                  <input
+                    className="UserInfoInput"
+                    type="text"
+                    value={Name}
+                    style={{ marginLeft: "61px" }}
+                    onChange={(e) => setName(e.target.value)}
+                    readOnly
+                  />
+                </div>
+                <div className="InputField">
+                  <h3>Email:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                  <input
+                    className="UserInfoInput"
+                    type="text"
+                    value={email}
+                    style={{ marginLeft: "120px" }}
+                    onChange={(e) => setEmail(e.target.value)}
+                    readOnly
+                  />
+                </div>
+
+                <div>
+                  <div className="InputField">
+                    <h3>Address:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                    <input
+                      className="UserInfoInput"
+                      type="text"
+                      value={address}
+                      style={{ marginLeft: "91px" }}
+                      onChange={(e) => setAddress(e.target.value)}
+                      readOnly
+                    />
+                  </div>
+                  <div className="InputField">
+                    <h3>Phone Number:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                    <input
+                      className="UserInfoInput"
+                      type="text"
+                      value={phone}
+                      style={{ marginLeft: "-2px" }}
+                      onChange={(e) => setPhonenumber(e.target.value)}
+                      readOnly
+                    />
+                  </div>
+                  <div className="InputField Introduction">
+                    <h3>Introduction:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                    <textarea
+                      className="UserInfoInput"
+                      style={{ fontSize: "100%" }}
+                      value={Introduction}
+                      onChange={(e) => setIntroduction(e.target.value)}
+                      readOnly
+                    />
+                  </div>
+                </div>
+
+                <div className="InputField">
+                  <h3>Online Cv:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                  <input
+                    className="UserInfoInput"
+                    type="text"
+                    value={OnlineCv}
+                    style={{ marginLeft: "70px", color: "#1098dc" }}
+                    onChange={(e) => setOnlineCv(e.target.value)}
+                    readOnly
+                  />
+                </div>
+
+                {(() => {
+                  if (Experience != -1) {
+                    return (
+                      <div className="InputField">
+                        <h3>Experience: </h3>
+                        <input
+                          className="UserInfoInput"
+                          type="number"
+                          value={Experience}
+                          style={{ marginLeft: "85px" }}
+                          onChange={(e) => setExperience(e.target.value)}
+                          min={0}
+                          readOnly
+                        />
+                      </div>
+                    );
+                  }
+                })()}
+
+                <div className="InputField">
+                  <h3>Role:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                  <p>{role.RoleText}</p>
+                </div>
+                <div className="EditProfileButton" style={{ display: "none" }}>
+                  <button>Save</button>
+                </div>
+              </Form>
+            </div>
+          </Col>
+        </Row>
+        <Row>
           {(() => {
-            if (currUser.imgPath != null && currUser.img != "") {
-              return <Image src={currUser.imgPath} />;
-            } else {
+            if (currUser.RoleId == 2) {
               return (
-                <Image
-                  src={process.env.PUBLIC_URL + "asset/img/tempAvatar.jpg"}
-                />
+                <Col
+                  className="CurrentJob"
+                  lg={10}
+                  style={{ margin: "0 auto" }}
+                >
+                  <h4>Company's Job</h4>
+                  <CompanyJobList />
+                </Col>
               );
+            } else {
             }
           })()}
-          <div className="Quote">
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing el"</p>
-          </div>
-          <div className="EditProfileButton">
-            <button id="edit" onClick={() => edit()}>
-              Edit Profile
-            </button>
-            <button
-              onClick={(e) => saveChanges(e)}
-              id="save"
-              style={{ display: "none" }}
-            >
-              Save Changes
-            </button>
-          </div>
-        </Col>
-        <Col className="UserInfo col-lg-8 col-sm-12">
-          <div className="col-lg-10 UserInfoWrapper">
-            <Form>
-              <div className="InputField">
-                <h3>UserName:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                <input
-                  className="UserInfoInput"
-                  type="text"
-                  value={Name}
-                  style={{ marginLeft: "61px" }}
-                  onChange={(e) => setName(e.target.value)}
-                  readOnly
-                />
-              </div>
-              <div className="InputField">
-                <h3>Email:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                <input
-                  className="UserInfoInput"
-                  type="text"
-                  value={email}
-                  style={{ marginLeft: "120px" }}
-                  onChange={(e) => setEmail(e.target.value)}
-                  readOnly
-                />
-              </div>
-
-              <div>
-                <div className="InputField">
-                  <h3>Address:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                  <input
-                    className="UserInfoInput"
-                    type="text"
-                    value={address}
-                    style={{ marginLeft: "91px" }}
-                    onChange={(e) => setAddress(e.target.value)}
-                    readOnly
-                  />
-                </div>
-                <div className="InputField">
-                  <h3>Phone Number:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                  <input
-                    className="UserInfoInput"
-                    type="text"
-                    value={phone}
-                    style={{ marginLeft: "-2px" }}
-                    onChange={(e) => setPhonenumber(e.target.value)}
-                    readOnly
-                  />
-                </div>
-                <div className="InputField Introduction">
-                  <h3>Introduction:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                  <textarea
-                    className="UserInfoInput"
-                    style={{ fontSize: "100%" }}
-                    value={Introduction}
-                    onChange={(e) => setIntroduction(e.target.value)}
-                    readOnly
-                  />
-                </div>
-              </div>
-
-              <div className="InputField">
-                <h3>Online Cv:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                <input
-                  className="UserInfoInput"
-                  type="text"
-                  value={OnlineCv}
-                  style={{ marginLeft: "70px", color: "#1098dc" }}
-                  onChange={(e) => setOnlineCv(e.target.value)}
-                  readOnly
-                />
-              </div>
-              {/* {() => {
-                if (Experience != -1) {
-                  return (
-                    <div className="InputField">
-                      <h3>Years Of Experience&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                      <input
-                        className="UserInfoInput"
-                        type="number"
-                        value={Experience}
-                        style={{ marginLeft: "70px", color: "#1098dc" }}
-                        onChange={(e) => setExperience(e.target.value)}
-                        readOnly
-                      />
-                    </div>
-                  );
-                }
-              }} */}
-              <div className="InputField">
-                <h3>Experience: </h3>
-                <input
-                  className="UserInfoInput"
-                  type="number"
-                  value={Experience}
-                  style={{ marginLeft: "85px" }}
-                  onChange={(e) => setExperience(e.target.value)}
-                  min={0}
-                  readOnly
-                />
-              </div>
-              <div className="InputField">
-                <h3>Role:&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                <p>{role.RoleText}</p>
-              </div>
-              <div className="EditProfileButton" style={{ display: "none" }}>
-                <button>Save</button>
-              </div>
-            </Form>
-          </div>
-        </Col>
-      </Row>
-    </DefaultTemplate>
-  );
+        </Row>
+        <Row style={{ marginBottom: "50px" }}>
+          <Button
+            style={{ margin: "0 auto" }}
+            className="col-lg-2 btn btn-danger"
+            onClick={(e) => HandleLogOut(e)}
+          >
+            Log out
+          </Button>
+        </Row>
+      </DefaultTemplate>
+    );
+  }
 }

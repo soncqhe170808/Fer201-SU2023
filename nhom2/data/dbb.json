@@ -74,6 +74,77 @@
       "Name": "Công Ty Cho Thuê Tài Chính Tnhh Mtv Quốc Tế Chailease",
       "OnlineCv": "http://sample.net/donkey#sea",
       "Experience": -1
+    },
+    {
+      "Name": "chu quy son",
+      "password": "12345",
+      "email": "chuquyson5@gmail.com",
+      "phone": "0363938085",
+      "address": "ha noi",
+      "roleId": "1",
+      "FieldOfExpertise": "1",
+      "BanStatus": 0,
+      "id": 6
+    },
+    {
+      "email": "chuquyson7@gmail.com",
+      "password": "12345",
+      "imgPath": "https://i.ytimg.com/vi/Zr-qM5Vrd0g/maxresdefault.jpg",
+      "phone": "0363938085",
+      "address": "167 phùng khắc khoan, sơn tây",
+      "Introduction": "Make sure you have followed the necessary steps to integrate the toast notification library properly into your application. Double-check the documentation of the specific toast library you are using for detailed instructions on how to set it up correctly.",
+      "fieldOfExpertise": 2,
+      "RoleId": 1,
+      "BanStatus": 0,
+      "Name": "chu quy son",
+      "OnlineCv": "http://sample.net/donkey#sea",
+      "Experience": "4",
+      "id": 7
+    },
+    {
+      "email": "chuquyson8@gmail.com",
+      "password": "12345",
+      "imgPath": "https://i.ytimg.com/vi/Zr-qM5Vrd0g/maxresdefault.jpg",
+      "phone": "0363938085",
+      "address": "167 phùng khắc khoan, sơn tây",
+      "Introduction": "Make sure you have followed the necessary steps to integrate the toast notification library properly into your application. Double-check the documentation of the specific toast library you are using for detailed instructions on how to set it up correctly.",
+      "fieldOfExpertise": 2,
+      "RoleId": 1,
+      "BanStatus": 0,
+      "Name": "chu quy son",
+      "OnlineCv": "http://sample.net/donkey#sea",
+      "Experience": "4",
+      "id": 8
+    },
+    {
+      "email": "chuquyson9@gmail.com",
+      "password": "12345",
+      "imgPath": "https://i.ytimg.com/vi/Zr-qM5Vrd0g/maxresdefault.jpg",
+      "phone": "0363938085",
+      "address": "167 phùng khắc khoan, sơn tây",
+      "Introduction": "Make sure you have followed the necessary steps to integrate the toast notification library properly into your application. Double-check the documentation of the specific toast library you are using for detailed instructions on how to set it up correctly.",
+      "fieldOfExpertise": 2,
+      "RoleId": 1,
+      "BanStatus": 0,
+      "Name": "chu quy son",
+      "OnlineCv": "http://sample.net/donkey#sea",
+      "Experience": "4",
+      "id": 9
+    },
+    {
+      "email": "chuquyson10@gmail.com",
+      "password": "12345",
+      "imgPath": "https://i.ytimg.com/vi/Zr-qM5Vrd0g/maxresdefault.jpg",
+      "phone": "0363938085",
+      "address": "167 phùng khắc khoan, sơn tây",
+      "Introduction": "Make sure you have followed the necessary steps to integrate the toast notification library properly into your application. Double-check the documentation of the specific toast library you are using for detailed instructions on how to set it up correctly.",
+      "fieldOfExpertise": 2,
+      "RoleId": 1,
+      "BanStatus": 0,
+      "Name": "chu quy son",
+      "OnlineCv": "http://sample.net/donkey#sea",
+      "Experience": "4",
+      "id": 10
     }
   ],
   "BanStatus": [
@@ -129,7 +200,7 @@
       "EndDate": "2023-07-02",
       "UserId": 2,
       "Cid": 2,
-      "Status": 3
+      "Status": 2
     },
     {
       "id": 2,
@@ -174,6 +245,17 @@
       "UserId": 5,
       "Cid": 11,
       "Status": 3
+    },
+    {
+      "id": 6,
+      "JobName": "Mobile Game Project",
+      "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
+      "RecuitmentGoal": 5,
+      "PostDate": "2023-06-02",
+      "EndDate": "2023-06-05",
+      "UserId": 2,
+      "Cid": 11,
+      "Status": 4
     }
   ],
   "JobStatus": [
@@ -197,23 +279,23 @@
   "Application": [
     {
       "id": 1,
-      "JobId": 1,
+      "JobId": 4,
       "UserId": 3,
       "ApplyDate": "2023-06-27",
       "Status": 0
     },
     {
       "id": 2,
-      "JobId": 1,
+      "JobId": 4,
       "UserId": 4,
       "ApplyDate": "2023-05-22",
       "Status": 0
     },
     {
-      "id": 3,
-      "JobId": 2,
-      "UserId": 4,
-      "ApplyDate": "2023-05-25",
+      "id": 2,
+      "JobId": 4,
+      "UserId": 7,
+      "ApplyDate": "2023-05-30",
       "Status": 0
     },
     {
