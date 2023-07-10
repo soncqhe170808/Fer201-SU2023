@@ -11,8 +11,9 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 export default function ApplicationList() {
-  // const JobId = useParams();
-  const JobId = 3;
+  const {JobId} = useParams();
+  console.log(JobId);
+  // const JobId = 3;
   const [JobName, setJobName] = useState("");
   const [ApplicationList, setApplicationList] = useState([]);
   const [UserList, setUser] = useState([]);
@@ -20,6 +21,8 @@ export default function ApplicationList() {
   const [filter, setFilter] = useState(0);
   const [userEx, setUserEx] = useState([]);
   const [FoundApp, SetFoundApp] = useState([]);
+
+
   useEffect(() => {
     fetch(" http://localhost:9999/Application/")
       .then((resp) => resp.json())
@@ -49,6 +52,7 @@ export default function ApplicationList() {
         setJobName(response.JobName);
       });
   }, []);
+  
   useEffect(() => {
     fetch("http://localhost:9999/FieldOfExpertise")
       .then((resp) => resp.json())
@@ -132,8 +136,8 @@ export default function ApplicationList() {
               >
                 <option value={"id"}>Default</option>
                 <option value={"yoe"}>Years Of Experience</option>
-                <option value={"recent"}>Most Recent</option>
-                <option value={"latest"}>Latest</option>
+                <option value={"recent"}>Oldest</option>
+                <option value={"latest"}>Most Recent</option>
               </select>
             </div>
           </div>
