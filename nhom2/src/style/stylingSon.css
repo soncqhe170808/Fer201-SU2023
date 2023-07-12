@@ -314,20 +314,22 @@ textarea {
 }
 
 .pendingJob {
-    background-color: #f6f4c3 !important;
-    --bs-table-bg: none
+    color: #d4cf3b !important;
+    
 }
-
+.JobLink{
+    text-decoration: none;
+}
 .RejectedJob {
-    background-color: #e2b9af;
-    --bs-table-bg: none
+    color: #dc6243 !important;
+   
 }
 
 .ActiveJob {
-    background-color: #c3eeb4;
-    --bs-table-bg: none
+    color: #65c940 !important;
+   
 }
 .CloseJob{
-    background-color: #bcb6b6;
-    --bs-table-bg: none;
+    color: #797777 !important;
+ 
 }

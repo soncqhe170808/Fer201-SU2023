@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Table } from "react-bootstrap";
+import { Container, Form, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function CompanyJobList() {
@@ -31,70 +31,41 @@ export default function CompanyJobList() {
     setFilteredJobList(filteredList);
   }, [JobPostList, currUser]);
   return (
-    <Table>
-      <thead>
-        <tr>
-          <td>
-            <h6>Job Name</h6>
-          </td>
-          <td>
-            <h6>Job Description</h6>
-          </td>
-          <td>
-            <h6>Recruitment Goal</h6>
-          </td>
-          <td>
-            <h6>Post Date</h6>
-          </td>
-          <td>
-            <h6>End Date</h6>
-          </td>
-          <td>
-            <h6>Status</h6>
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        {filteredJobList.map((j) => {
-          if (j.Status == 1) {
-            return (
-              <tr key={j.id} className="pendingJob">
+    <Container>
+      <Row>
+        <Form></Form>
+      </Row>
+      <Row>
+        <Table>
+          <thead>
+            <tr>
+              <td>
+                <h6>Job Name</h6>
+              </td>
+              <td className="col-lg-5">
+                <h6>Job Description</h6>
+              </td>
+              <td className="col-lg-1">
+                <h6>Recruitment Goal</h6>
+              </td>
+              <td>
+                <h6>Post Date</h6>
+              </td>
+              <td>
+                <h6>End Date</h6>
+              </td>
+              <td>
+                <h6>Status</h6>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredJobList.map((j) => (
+              <tr key={j.id}>
                 <td>
-                  <Link to={"/ApplicationList/" + j.id}>{j.JobName}</Link>
-                </td>
-                <td>{j.JobDescription}</td>
-                <td>{j.RecuitmentGoal}</td>
-                <td>{j.PostDate}</td>
-                <td>{j.EndDate}</td>
-                {StatusList.map((s) => {
-                  if (s.id == j.Status) {
-                    return <td>{s.text}</td>;
-                  }
-                })}
-              </tr>
-            );
-          } else if (j.Status == 2) {
-            return (
-              <tr key={j.id} className="RejectedJob">
-                <td>
-                  <Link to={"/ApplicationList/" + j.id}>{j.JobName}</Link>
-                </td>
-                <td>{j.JobDescription}</td>
-                <td>{j.RecuitmentGoal}</td>
-                <td>{j.PostDate}</td>
-                <td>{j.EndDate}</td>
-                {StatusList.map((s) => {
-                  if (s.id == j.Status) {
-                    return <td>{s.text}</td>;
-                  }
-                })}
-              </tr>
-            );
-          } else if (j.Status == 3) {
-            return (
-              <tr key={j.id} className="ActiveJob">
-                <td>
-                  <Link to={"/ApplicationList/" + j.id}>{j.JobName}</Link>
+                  <Link className="JobLink" to={"/ApplicationList/" + j.id}>
+                    {j.JobName}
+                  </Link>
                 </td>
                 <td className="col-lg-5">{j.JobDescription}</td>
                 <td className="col-lg-1">{j.RecuitmentGoal}</td>
@@ -102,31 +73,30 @@ export default function CompanyJobList() {
                 <td>{j.EndDate}</td>
                 {StatusList.map((s) => {
                   if (s.id == j.Status) {
-                    return <td>{s.text}</td>;
+                    switch (s.id) {
+                      case 1:
+                        return <td className="pendingJob">{s.text}</td>;
+                        break;
+                      case 2:
+                        return <td className="RejectedJob">{s.text}</td>;
+                        break;
+                      case 3:
+                        return <td className="ActiveJob">{s.text}</td>;
+                        break;
+                      case 4:
+                        return <td className="CloseJob">{s.text}</td>;
+                        break;
+                      default:
+                        console.log("err");
+                        break;
+                    }
                   }
                 })}
               </tr>
-            );
-          } else if (j.Status == 4) {
-            return (
-              <tr key={j.id} className="CloseJob">
-                <td>
-                  <Link to={"/ApplicationList/" + j.id}>{j.JobName}</Link>
-                </td>
-                <td className="col-lg-5">{j.JobDescription}</td>
-                <td className="col-lg-1">{j.RecuitmentGoal}</td>
-                <td>{j.PostDate}</td>
-                <td>{j.EndDate}</td>
-                {StatusList.map((s) => {
-                  if (s.id == j.Status) {
-                    return <td>{s.text}</td>;
-                  }
-                })}
-              </tr>
-            );
-          }
-        })}
-      </tbody>
-    </Table>
+            ))}
+          </tbody>
+        </Table>
+      </Row>
+    </Container>
   );
 }
