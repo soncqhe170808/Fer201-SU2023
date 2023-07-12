@@ -77,42 +77,50 @@ const JobData = () => {
           <div className="col-12">
             <h2 className="text-center">Jobs List</h2>
           </div>
-          <div className="col-12">
-            <div className="sort-buttons">
-              <button className="btn btn-primary" onClick={sortJobsByNewest}>
-                New
-              </button>
-              <button className="btn btn-primary" onClick={sortJobsByOldest}>
-                Old
-              </button>
-            </div>
-          </div>
+          {/* <div className="col-12">
+      <div className="sort-buttons">
+        <button className="btn btn-primary" onClick={sortJobsByNewest}>
+          New
+        </button>
+        <button className="btn btn-primary" onClick={sortJobsByOldest}>
+          Old
+        </button>
+      </div>
+    </div> */}
 
           <div className="col-9">
-            <div className="job-data">
+            <div className="job-data row">
               {filteredJobs.map((job) => (
-                <div key={job.id} className="job-card">
-                  <Link to={`/JobDetails/${job.id}`}>
-                    <img src={job.image} alt="Job" className="job-image" />
-                    <h2>{job.JobName}</h2>
-                  </Link>
-                  <p
-                    className={`job-description ${
-                      expandedJobId === job.id ? 'expanded' : ''
-                    }`}
-                    onClick={() => toggleJobDescription(job.id)}
-                  >
-                    {expandedJobId === job.id
-                      ? job.JobDescription
-                      : job.JobDescription.substring(0, 100) + '...'}
-                  </p>
-                  <p>Recruitment Goal: {job.RecuitmentGoal}</p>
-                  <p>Posted on: {job.PostDate}</p>
-                  <p>End Date: {job.EndDate}</p>
+                <div key={job.id} className="job-card col-8">
+                  <div className="row">
+                    <div className="col-4">
+                      <Link to={`/JobDetails/${job.id}`}>
+                        <img src={job.image} alt="Job" className="job-image" />
+                      </Link>
+                    </div>
+                    <div className="col-8">
+                      <Link to={`/JobDetails/${job.id}`}>
+                        <h2>{job.JobName}</h2>
+                      </Link>
+                      <p
+                        className={`job-description ${expandedJobId === job.id ? 'expanded' : ''
+                          }`}
+                        onClick={() => toggleJobDescription(job.id)}
+                      >
+                        {expandedJobId === job.id
+                          ? job.JobDescription
+                          : job.JobDescription.substring(0, 100) + '...'}
+                      </p>
+                      <p>Recruitment Goal: {job.RecuitmentGoal}</p>
+                      <p>Posted on: {job.PostDate}</p>
+                      <p>End Date: {job.EndDate}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
+
           <div className="col-3">
             <div className="search-by-name">
               <div>
@@ -132,6 +140,8 @@ const JobData = () => {
           </div>
         </div>
       </div>
+
+
     </DefaultTemplate>
   );
 };
