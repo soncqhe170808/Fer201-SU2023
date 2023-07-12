@@ -194,6 +194,7 @@
     {
       "id": 1,
       "JobName": "Java Web BackEnd",
+      "image":"https://vcdn1-dulich.vnecdn.net/2021/07/16/3-1-1626444927.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KU8IkmrM5HbtYIyyS5k1qQ",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 5,
       "PostDate": "2023-06-02",
@@ -205,6 +206,7 @@
     {
       "id": 2,
       "JobName": "Networking engineering",
+      "image":"https://vcdn1-dulich.vnecdn.net/2021/07/16/3-1-1626444927.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KU8IkmrM5HbtYIyyS5k1qQ",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 1,
       "PostDate": "2023-05-20",
@@ -216,6 +218,7 @@
     {
       "id": 3,
       "JobName": "Front end ReactJS developer",
+      "image":"https://vcdn1-dulich.vnecdn.net/2021/07/16/3-1-1626444927.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KU8IkmrM5HbtYIyyS5k1qQ",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 3,
       "PostDate": "2023-05-20",
@@ -227,6 +230,7 @@
     {
       "id": 4,
       "JobName": "PHP BackEnd",
+      "image":"https://vcdn1-dulich.vnecdn.net/2021/07/16/3-1-1626444927.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KU8IkmrM5HbtYIyyS5k1qQ",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 5,
       "PostDate": "2023-06-02",
@@ -238,6 +242,7 @@
     {
       "id": 5,
       "JobName": "React Native Front end Developer",
+      "image":"https://vcdn1-dulich.vnecdn.net/2021/07/16/3-1-1626444927.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KU8IkmrM5HbtYIyyS5k1qQ",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
       "RecuitmentGoal": 5,
       "PostDate": "2023-06-02",

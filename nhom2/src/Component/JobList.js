@@ -81,7 +81,7 @@ export default function Joblist() {
     <Row className="JobList">
       <Row className="JobListHeader">
         <h3>Những Công Việc Hot nhất</h3>
-        <Link to="#">Xem tất cả</Link>
+        <Link to="/Jobdata">Xem tất cả</Link>
       </Row>
       <Row className="JobLisCarousel">
         <Carousel
