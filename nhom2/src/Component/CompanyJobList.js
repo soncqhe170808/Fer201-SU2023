@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Form, Row, Table } from "react-bootstrap";
+import { Container, Form, FormGroup, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function CompanyJobList() {
@@ -30,13 +30,30 @@ export default function CompanyJobList() {
     const filteredList = JobPostList.filter((j) => j.UserId == currUser.id);
     setFilteredJobList(filteredList);
   }, [JobPostList, currUser]);
+  const SortByDate = (e, sortby) =>{
+    const newJobList = [...filteredJobList];
+    if(sortby == "post"){
+      newJobList.sort((a, b)=>a.PostDate > b.PostDate ? 1 : -1 )
+    }else{
+      newJobList.sort((a, b)=>a.EndDate > b.EndDate ? 1 : -1 )
+    }
+    setFilteredJobList(newJobList)
+  }
   return (
     <Container>
       <Row>
-        <Form></Form>
+        <Form>
+          <Form.Group className="col-lg-5" style={{margin: "0 auto",border: "1px solid #92d35e", borderRadius: "10px"}}>
+            <Form.Control
+            type="text"
+            placeholder="Search Job By Name"
+            onChange={(e)=> console.log(e.target.value)}
+            />
+          </Form.Group>
+        </Form>
       </Row>
       <Row>
-        <Table>
+        <Table className="table-striped">
           <thead>
             <tr>
               <td>
@@ -49,10 +66,10 @@ export default function CompanyJobList() {
                 <h6>Recruitment Goal</h6>
               </td>
               <td>
-                <h6>Post Date</h6>
+                <h6><button style={{border:"none", backgroundColor: "inherit", fontWeight: "bold"}} onClick={(e)=>SortByDate(e, "post")}>Post Date</button></h6>
               </td>
               <td>
-                <h6>End Date</h6>
+                <h6><button style={{border:"none", backgroundColor: "inherit", fontWeight: "bold"}} onClick={(e)=>SortByDate(e, "close")}>Close Date</button></h6>
               </td>
               <td>
                 <h6>Status</h6>

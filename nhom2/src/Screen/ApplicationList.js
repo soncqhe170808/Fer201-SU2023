@@ -21,7 +21,7 @@ export default function ApplicationList() {
   const [filter, setFilter] = useState(0);
   const [userEx, setUserEx] = useState([]);
   const [FoundApp, SetFoundApp] = useState([]);
-
+  // const [AppAndUser, setAppAndUser]
 
   useEffect(() => {
     fetch(" http://localhost:9999/Application/")
