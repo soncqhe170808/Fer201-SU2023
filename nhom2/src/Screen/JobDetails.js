@@ -14,9 +14,9 @@ const JobDetails = ({ jobs }) => {
 
   return (
     <DefaultTemplate>
-      <div className="container">
+      <div className="container" >
         <div className="row">
-          <div className="col-lg-6 col-md-12">
+          <div className="col-lg-6 col-md-12" >
             <div className="job-details-image">
               <img src={selectedJob.image} alt="Job" className="job-image" />
             </div>

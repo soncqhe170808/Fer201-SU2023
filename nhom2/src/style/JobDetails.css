@@ -1,11 +1,11 @@
 .job-details-image {
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
+
   }
   
   .job-image {
-    max-width: 100%;
+    width: auto;;
     height: auto;
   }
   
@@ -17,4 +17,3 @@
     margin-bottom: 40px;
     padding: 0 20px;
   }
-  
