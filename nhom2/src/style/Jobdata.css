@@ -2,12 +2,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
   }
   .job-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     margin: 20px 2%;
 }
@@ -71,7 +71,7 @@
 .job-description.expanded {
   white-space: normal;
 }
-.search-by-name {
+/* .search-by-name {
     background-color: #f8f8f8;
     padding: 10px;
     border-radius: 4px;
@@ -93,7 +93,7 @@
   
   .search-by-name span:last-child {
     margin-right: 0;
-  }
+  } */
   .sort-buttons {
     display: flex;
     justify-content: flex-start;
@@ -103,4 +103,31 @@
   .sort-buttons .btn {
     margin-right: 10px;
   }
+  .search-input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .sort-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .search-by-name {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .search-by-name input {
+    margin-right: 5px;
+  }
+  
   

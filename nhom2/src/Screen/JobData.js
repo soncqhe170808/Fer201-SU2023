@@ -11,6 +11,7 @@ const JobData = () => {
   const [isFetched, setIsFetched] = useState(false);
   const [checkedState, setCheckedState] = useState([]);
 
+
   const sortJobsByNewest = () => {
     const sortedJobs = [...jobs].sort((a, b) => {
       const dateA = new Date(a.PostDate);
@@ -47,12 +48,14 @@ const JobData = () => {
 
   const handleFilterChecked = (event, jobId) => {
     if (checkedState.includes(jobId)) {
-      // Job ID is already present, remove it
       setCheckedState(checkedState.filter((id) => id !== jobId));
     } else {
-      // Job ID is not present, add it
       setCheckedState([...checkedState, jobId]);
     }
+  };
+
+  const handleSearch = (event) => {
+    setSearchKeyword(event.target.value);
   };
 
   const filteredJobs = jobs.filter((job) => {
@@ -77,18 +80,27 @@ const JobData = () => {
           <div className="col-12">
             <h2 className="text-center">Jobs List</h2>
           </div>
-          {/* <div className="col-12">
-      <div className="sort-buttons">
-        <button className="btn btn-primary" onClick={sortJobsByNewest}>
-          New
-        </button>
-        <button className="btn btn-primary" onClick={sortJobsByOldest}>
-          Old
-        </button>
-      </div>
-    </div> */}
+          <div className="col-12">
+            <div className="sort-buttons">
+              <button className="btn btn-primary" onClick={sortJobsByNewest}>
+                New
+              </button>
+              <button className="btn btn-primary" onClick={sortJobsByOldest}>
+                Old
+              </button>
+            </div>
+          </div>
 
-          <div className="col-9">
+          <div className="col-9" style={{margin:"0 auto"}}>
+          <div className="col-12 text-center mt-3 mb-5">
+            <input
+              type="text"
+              placeholder="Search by name or date"
+              value={searchKeyword}
+              onChange={handleSearch}
+              className="search-input"
+            />
+          </div>
             <div className="job-data row">
               {filteredJobs.map((job) => (
                 <div key={job.id} className="job-card col-8">
@@ -121,7 +133,7 @@ const JobData = () => {
             </div>
           </div>
 
-          <div className="col-3">
+          {/* <div className="col-3">
             <div className="search-by-name">
               <div>
                 <h4>Search By Name</h4>
@@ -137,7 +149,7 @@ const JobData = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
