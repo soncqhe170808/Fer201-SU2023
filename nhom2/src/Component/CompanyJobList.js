@@ -7,6 +7,7 @@ export default function CompanyJobList() {
   const [JobPostList, setJobPostList] = useState([]);
   const [filteredJobList, setFilteredJobList] = useState([]);
   const [StatusList, setStatusList] = useState([]);
+  const [searchKeyword, setSearchKeyword] = useState('');
   //   setCurrUser(JSON.parse(sessionStorage.getItem("currUser")));
   useEffect(() => {
     setCurrUser(JSON.parse(sessionStorage.getItem("currUser")));
@@ -39,6 +40,11 @@ export default function CompanyJobList() {
     }
     setFilteredJobList(newJobList)
   }
+  const HandleSearch = (e) =>{
+    setSearchKeyword(e);
+  }
+  const jobList = filteredJobList.filter((job)=> job.JobName.toLowerCase().includes(searchKeyword.toLowerCase()))
+  
   return (
     <Container>
       <Row>
@@ -47,7 +53,7 @@ export default function CompanyJobList() {
             <Form.Control
             type="text"
             placeholder="Search Job By Name"
-            onChange={(e)=> console.log(e.target.value)}
+            onChange={(e)=> HandleSearch(e.target.value)}
             />
           </Form.Group>
         </Form>
@@ -77,7 +83,7 @@ export default function CompanyJobList() {
             </tr>
           </thead>
           <tbody>
-            {filteredJobList.map((j) => (
+            {jobList.map((j) => (
               <tr key={j.id}>
                 <td>
                   <Link className="JobLink" to={"/ApplicationList/" + j.id}>

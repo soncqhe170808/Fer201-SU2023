@@ -333,3 +333,7 @@ textarea {
     color: #797777 !important;
  
 }
+.pendingJobItem{
+    border: 1px solid black;
+    margin: 0 auto;
+}

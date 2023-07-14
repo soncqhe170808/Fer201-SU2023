@@ -9,6 +9,7 @@ import ApplicationList from './Screen/ApplicationList';
 import ProceedApplication from './Screen/ProceedApplication';
 import JobData from './Screen/JobData';
 import JobDetails from './Screen/JobDetails';
+import ProceedJobPost from './Screen/ProceedJobPost';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -34,6 +35,7 @@ function App() {
           path="/JobDetails/:jobId"
           element={<JobDetails jobs={jobs} />} 
         />
+        <Route path='/ProceedJobPost' element={<ProceedJobPost/>}/>
         <Route path="/ApplicationList/:JobId" element={<ApplicationList />} />
         <Route path="/ProceedApplication/:ApplicationId" element={<ProceedApplication />} />
       </Routes>

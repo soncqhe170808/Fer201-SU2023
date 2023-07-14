@@ -5,6 +5,7 @@ import { Button, Col, Form, Image, Row, Table } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CompanyJobList from "../Component/CompanyJobList";
+import MyApplication from "../Component/MyApplication";
 export default function PersonalProfile() {
   const [currUser, setCurrUser] = useState({});
   const [currUserId, setCurrUserId] = useState(0);
@@ -331,7 +332,17 @@ export default function PersonalProfile() {
                   <CompanyJobList />
                 </Col>
               );
-            } else {
+            } else if (currUser.RoleId == 1) {
+              return (
+                <Col
+                  className="CurrentJob"
+                  lg={10}
+                  style={{ margin: "0 auto" }}
+                >
+                  <h4>My applications</h4>
+                  <MyApplication/>
+                </Col>
+              );
             }
           })()}
         </Row>

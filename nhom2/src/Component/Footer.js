@@ -15,11 +15,11 @@ const Footer = () => {
       <div style={{padding: "0"}}>
         <footer
           className="text-center text-lg-start text-dark"
-          style={{ backgroundColor: "#ECEFF1" }}
+          style={{ backgroundColor: "#f4f4eb" }}
         >
           <section
             className="d-flex justify-content-between p-4 text-white"
-            style={{ backgroundColor: "#21D192" }}
+            style={{ backgroundColor: "#a2db74" }}
           >
             <div className="me-5">
               <span>Get connected with us on social networks:</span>
@@ -45,7 +45,7 @@ const Footer = () => {
               </a>
             </div>
           </section>
-          <section>
+          <section style={{backgroundColor: "#f4f4eb"}}>
             <div className="container text-center text-md-start mt-5">
               <div className="row mt-3">
                 <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
@@ -54,7 +54,7 @@ const Footer = () => {
                     className="mb-4 mt-0 d-inline-block mx-auto"
                     style={{
                       width: "60px",
-                      backgroundColor: "#7c4dff",
+                      backgroundColor: "#f4f4eb",
                       height: "2px",
                     }}
                   />
@@ -70,7 +70,7 @@ const Footer = () => {
                     className="mb-4 mt-0 d-inline-block mx-auto"
                     style={{
                       width: "60px",
-                      backgroundColor: "#7c4dff",
+                      backgroundColor: "#f4f4eb",
                       height: "2px",
                     }}
                   />
@@ -101,7 +101,7 @@ const Footer = () => {
                     className="mb-4 mt-0 d-inline-block mx-auto"
                     style={{
                       width: "60px",
-                      backgroundColor: "#7c4dff",
+                      backgroundColor: "#f4f4eb",
                       height: "2px",
                     }}
                   />
@@ -132,7 +132,7 @@ const Footer = () => {
                     className="mb-4 mt-0 d-inline-block mx-auto"
                     style={{
                       width: "60px",
-                      backgroundColor: "#7c4dff",
+                      backgroundColor: "#f4f4eb",
                       height: "2px",
                     }}
                   />
