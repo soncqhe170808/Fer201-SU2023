@@ -6,33 +6,12 @@ import DefaultTemplate from '../Template/DefaultTemplate';
 
 const JobData = () => {
   const [jobs, setJobs] = useState([]);
+  const [users, setUsers] = useState([]);
   const [expandedJobId, setExpandedJobId] = useState(null);
   const [searchKeyword, setSearchKeyword] = useState('');
   const [isFetched, setIsFetched] = useState(false);
   const [checkedState, setCheckedState] = useState([]);
-  const [currUser, setCurrUser] = useState({});
 
-  const fetchJobs = async () => {
-    try {
-      const response = await fetch('http://localhost:9999/JobPost');
-      const data = await response.json();
-      setJobs(data);
-      setIsFetched(true);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const fetchCompanyImage = async (userId) => {
-    try {
-      const response = await fetch(`http://localhost:9999/User/${userId}`);
-      const data = await response.json();
-      return data.imgPath;
-    } catch (error) {
-      console.log(error);
-      return null;
-    }
-  };
 
   const sortJobsByNewest = () => {
     const sortedJobs = [...jobs].sort((a, b) => {
@@ -51,29 +30,26 @@ const JobData = () => {
     });
     setJobs(sortedJobs);
   };
+  useEffect(() => {
+    fetch("http://localhost:9999/user?RoleId=2")
+      .then((res) => res.json())
+      .then((result) => {
+        setUsers(result);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   useEffect(() => {
     if (!isFetched) {
-      fetchJobs();
+      fetch('http://localhost:9999/JobPost')
+        .then((response) => response.json())
+        .then((data) => {
+          setJobs(data);
+          setIsFetched(true);
+        })
+        .catch((error) => console.log(error));
     }
   }, [isFetched]);
-
-  useEffect(() => {
-    const fetchUserImage = async () => {
-      const jobsWithImages = await Promise.all(
-        jobs.map(async (job) => {
-          const image = await fetchCompanyImage(job.UserId);
-          return {
-            ...job,
-            CompanyImage: image,
-          };
-        })
-      );
-      setJobs(jobsWithImages);
-    };
-
-    fetchUserImage();
-  }, [jobs]);
 
   const toggleJobDescription = (jobId) => {
     setExpandedJobId(jobId === expandedJobId ? null : jobId);
@@ -135,42 +111,46 @@ const JobData = () => {
               />
             </div>
             <div className="job-data row">
-              {filteredJobs.map((job) => (
-                <div key={job.id} className="job-card col-8">
-                  <div className="row">
-                    <div className="col-4">
-                      <Link to={`/JobDetails/${job.id}`}>
-                        {job.CompanyImage && (
-                        <img src={job.CompanyImage} alt="Job" className="job-image" />
-                      )}
-                      </Link>
-                    </div>
-                    <div className="col-8">
-                      <Link to={`/JobDetails/${job.id}`}>
-                        <h2>{job.JobName}</h2>
-                      </Link>
-                      <p
-                        className={`job-description ${expandedJobId === job.id ? 'expanded' : ''
-                          }`}
-                        onClick={() => toggleJobDescription(job.id)}
-                      >
-                        {expandedJobId === job.id
-                          ? job.JobDescription
-                          : job.JobDescription.substring(0, 100) + '...'}
-                      </p>
-                      <p>Recruitment Goal: {job.RecuitmentGoal}</p>
-                      <p>Posted on: {job.PostDate}</p>
-                      <p>End Date: {job.EndDate}</p>
-                      {/* Display the company image */}
-                      
+              {filteredJobs.map((job) => {
+                const user = users.find((user) => user.id === job.UserId);
+                return (
+                  <div key={job.id} className="job-card col-8">
+                    <div className="row">
+                      <div className="col-4">
+                        <Link to={`/JobDetails/${job.id}`}>
+                          {user && user.imgPath && (
+                            <img src={user.imgPath} alt="Job" className="job-image" />
+                          )}
+                        </Link>
+                      </div>
+                      <div className="col-8">
+                        <Link to={`/JobDetails/${job.id}`}>
+                          <h2>{job.JobName}</h2>
+                        </Link>
+                        <p
+                          className={`job-description ${expandedJobId === job.id ? 'expanded' : ''
+                            }`}
+                          onClick={() => toggleJobDescription(job.id)}
+                        >
+                          {expandedJobId === job.id
+                            ? job.JobDescription
+                            : job.JobDescription.substring(0, 100) + '...'}
+                        </p>
+                        <p>Recruitment Goal: {job.RecuitmentGoal}</p>
+                        <p>Posted on: {job.PostDate}</p>
+                        <p>End Date: {job.EndDate}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
+
             </div>
           </div>
         </div>
       </div>
+
+
     </DefaultTemplate>
   );
 };
