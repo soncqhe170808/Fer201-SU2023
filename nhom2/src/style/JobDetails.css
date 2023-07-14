@@ -4,9 +4,9 @@
 
   }
   
-  .job-image {
-    width: auto;;
-    height: auto;
+  .user-image {
+    width: 300px;
+    height: 300px;
   }
   
   .job-details-description {
