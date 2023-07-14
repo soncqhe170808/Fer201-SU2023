@@ -10,7 +10,29 @@ const JobData = () => {
   const [searchKeyword, setSearchKeyword] = useState('');
   const [isFetched, setIsFetched] = useState(false);
   const [checkedState, setCheckedState] = useState([]);
+  const [currUser, setCurrUser] = useState({});
 
+  const fetchJobs = async () => {
+    try {
+      const response = await fetch('http://localhost:9999/JobPost');
+      const data = await response.json();
+      setJobs(data);
+      setIsFetched(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchCompanyImage = async (userId) => {
+    try {
+      const response = await fetch(`http://localhost:9999/User/${userId}`);
+      const data = await response.json();
+      return data.imgPath;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  };
 
   const sortJobsByNewest = () => {
     const sortedJobs = [...jobs].sort((a, b) => {
@@ -32,15 +54,26 @@ const JobData = () => {
 
   useEffect(() => {
     if (!isFetched) {
-      fetch('http://localhost:9999/JobPost')
-        .then((response) => response.json())
-        .then((data) => {
-          setJobs(data);
-          setIsFetched(true);
-        })
-        .catch((error) => console.log(error));
+      fetchJobs();
     }
   }, [isFetched]);
+
+  useEffect(() => {
+    const fetchUserImage = async () => {
+      const jobsWithImages = await Promise.all(
+        jobs.map(async (job) => {
+          const image = await fetchCompanyImage(job.UserId);
+          return {
+            ...job,
+            CompanyImage: image,
+          };
+        })
+      );
+      setJobs(jobsWithImages);
+    };
+
+    fetchUserImage();
+  }, [jobs]);
 
   const toggleJobDescription = (jobId) => {
     setExpandedJobId(jobId === expandedJobId ? null : jobId);
@@ -91,23 +124,25 @@ const JobData = () => {
             </div>
           </div>
 
-          <div className="col-9" style={{margin:"0 auto"}}>
-          <div className="col-12 text-center mt-3 mb-5">
-            <input
-              type="text"
-              placeholder="Search by name or date"
-              value={searchKeyword}
-              onChange={handleSearch}
-              className="search-input"
-            />
-          </div>
+          <div className="col-9" style={{ margin: "0 auto" }}>
+            <div className="col-12 text-center mt-3 mb-5">
+              <input
+                type="text"
+                placeholder="Search by name or date"
+                value={searchKeyword}
+                onChange={handleSearch}
+                className="search-input"
+              />
+            </div>
             <div className="job-data row">
               {filteredJobs.map((job) => (
                 <div key={job.id} className="job-card col-8">
                   <div className="row">
                     <div className="col-4">
                       <Link to={`/JobDetails/${job.id}`}>
-                        <img src={job.image} alt="Job" className="job-image" />
+                        {job.CompanyImage && (
+                        <img src={job.CompanyImage} alt="Job" className="job-image" />
+                      )}
                       </Link>
                     </div>
                     <div className="col-8">
@@ -126,34 +161,16 @@ const JobData = () => {
                       <p>Recruitment Goal: {job.RecuitmentGoal}</p>
                       <p>Posted on: {job.PostDate}</p>
                       <p>End Date: {job.EndDate}</p>
+                      {/* Display the company image */}
+                      
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* <div className="col-3">
-            <div className="search-by-name">
-              <div>
-                <h4>Search By Name</h4>
-                {jobs.map((job) => (
-                  <div key={job.id}>
-                    <input
-                      type="checkbox"
-                      checked={checkedState.includes(job.id)}
-                      onChange={(e) => handleFilterChecked(e, job.id)}
-                    />
-                    <span>{job.JobName}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
-
-
     </DefaultTemplate>
   );
 };
