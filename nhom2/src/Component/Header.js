@@ -59,21 +59,36 @@ export default function Header() {
                   Home Page
                 </NavLink>
               </li>
-              <li class="nav-card-item">
-                <a class="nav-link" href="aboutus.html">
-                  About
-                </a>
-              </li>
-              <li class="nav-card-item">
-                <a class="nav-link" href="contact.html">
-                  Contact
-                </a>
-              </li>
-              <li class="nav-card-item">
+              {(() => {
+                if (
+                  JSON.parse(sessionStorage.getItem("currUser")) != null &&
+                  JSON.parse(sessionStorage.getItem("currUser")).RoleId == 1
+                ) {
+                  return (
+                    <li class="nav-card-item">
+                      <a class="nav-link" href="/UserApplicationTracking">
+                        Applications Tracking
+                      </a>
+                    </li>
+                  );
+                } else if (
+                  JSON.parse(sessionStorage.getItem("currUser")) != null &&
+                  JSON.parse(sessionStorage.getItem("currUser")).RoleId == 2
+                ) {
+                  return (
+                    <li class="nav-card-item">
+                      <a class="nav-link" href="/CompanyJobTracking">
+                        Job Post Tracking
+                      </a>
+                    </li>
+                  );
+                }
+              })()}
+              {/* <li class="nav-card-item">
                 <a class="nav-link" href="blog.html">
                   Blog
                 </a>
-              </li>
+              </li> */}
             </ul>
             <ul class="right navbar-nav ms-auto">
               <li class="nav-card-item-right">
@@ -84,7 +99,6 @@ export default function Header() {
                     isActive ? "Active-nav" : "InActive-nav"
                   }
                 >
-           
                   Personal Profile
                 </NavLink>
               </li>

@@ -10,6 +10,8 @@ import ProceedApplication from './Screen/ProceedApplication';
 import JobData from './Screen/JobData';
 import JobDetails from './Screen/JobDetails';
 import ProceedJobPost from './Screen/ProceedJobPost';
+import UserApplicationTracking from './Screen/UserApplicationTracking';
+import CompanyJobTracking from './Screen/CompanyJobTracking';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -31,6 +33,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/JobData" element={<JobData />} />
+        <Route path='/UserApplicationTracking' element={<UserApplicationTracking/>}/>
         <Route
           path="/JobDetails/:jobId"
           element={<JobDetails jobs={jobs} />} 
@@ -38,6 +41,7 @@ function App() {
         <Route path='/ProceedJobPost' element={<ProceedJobPost/>}/>
         <Route path="/ApplicationList/:JobId" element={<ApplicationList />} />
         <Route path="/ProceedApplication/:ApplicationId" element={<ProceedApplication />} />
+        <Route path='/CompanyJobTracking' element={<CompanyJobTracking/>}/>
       </Routes>
     </Router>
   );

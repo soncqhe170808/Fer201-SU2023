@@ -319,33 +319,7 @@ export default function PersonalProfile() {
             </div>
           </Col>
         </Row>
-        <Row>
-          {(() => {
-            if (currUser.RoleId == 2) {
-              return (
-                <Col
-                  className="CurrentJob"
-                  lg={10}
-                  style={{ margin: "0 auto" }}
-                >
-                  <h4>Company's Job</h4>
-                  <CompanyJobList />
-                </Col>
-              );
-            } else if (currUser.RoleId == 1) {
-              return (
-                <Col
-                  className="CurrentJob"
-                  lg={10}
-                  style={{ margin: "0 auto" }}
-                >
-                  <h4>My applications</h4>
-                  <MyApplication/>
-                </Col>
-              );
-            }
-          })()}
-        </Row>
+        
         <Row style={{ marginBottom: "50px" }}>
           <Button
             style={{ margin: "0 auto" }}
