@@ -138,12 +138,12 @@
       "phone": "0363938085",
       "address": "167 phùng khắc khoan, sơn tây",
       "Introduction": "Make sure you have followed the necessary steps to integrate the toast notification library properly into your application. Double-check the documentation of the specific toast library you are using for detailed instructions on how to set it up correctly.",
-      "fieldOfExpertise": 2,
-      "RoleId": 1,
+      "fieldOfExpertise": -1,
+      "RoleId": 3,
       "BanStatus": 0,
       "Name": "chu quy son",
       "OnlineCv": "http://sample.net/donkey#sea",
-      "Experience": "4",
+      "Experience": "-1",
       "id": 10
     }
   ],
@@ -165,6 +165,10 @@
     {
       "id": 2,
       "RoleText": "Company"
+    },
+    {
+      "id": 3,
+      "RoleText": "Admin"
     }
   ],
   "Admin": [
@@ -204,9 +208,9 @@
     },
     {
       "id": 2,
-      "JobName": "Networking engineering",
+      "JobName": "Networking Engineer",
       "JobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat suscipit nisl id tincidunt. Aenean id pretium dolor. Suspendisse potenti. Etiam pretium massa at iaculis ornare. Duis rutrum eros vel massa condimentum imperdiet. In hac habitasse platea dictumst. Mauris eu risus quis ante rutrum dapibus sit amet non turpis. Integer in justo luctus, finibus arcu ut, tincidunt felis.",
-      "RecuitmentGoal": 1,
+      "RecuitmentGoal": 5,
       "PostDate": "2023-05-20",
       "EndDate": "2023-08-01",
       "UserId": 2,
@@ -328,6 +332,13 @@
       "JobId": 5,
       "UserId": 3,
       "ApplyDate": "2023-06-30",
+      "Status": 0
+    },
+    {
+      "id": 7,
+      "JobId": 7,
+      "UserId": 3,
+      "ApplyDate": "2023-07-14",
       "Status": 0
     }
   ],
