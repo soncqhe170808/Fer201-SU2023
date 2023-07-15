@@ -34,9 +34,9 @@ export default function CompanyJobList() {
   const SortByDate = (e, sortby) =>{
     const newJobList = [...filteredJobList];
     if(sortby == "post"){
-      newJobList.sort((a, b)=>a.PostDate > b.PostDate ? 1 : -1 )
+      newJobList.sort((a, b)=>a.PostDate > b.PostDate ? -1 : 1 )
     }else{
-      newJobList.sort((a, b)=>a.EndDate > b.EndDate ? 1 : -1 )
+      newJobList.sort((a, b)=>a.EndDate > b.EndDate ? -1 : 1 )
     }
     setFilteredJobList(newJobList)
   }
