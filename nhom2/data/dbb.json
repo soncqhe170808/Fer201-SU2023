@@ -94,7 +94,7 @@
       "address": "167 phùng khắc khoan, sơn tây",
       "Introduction": "Make sure you have followed the necessary steps to integrate the toast notification library properly into your application. Double-check the documentation of the specific toast library you are using for detailed instructions on how to set it up correctly.",
       "fieldOfExpertise": 2,
-      "RoleId": 1,
+      "RoleId": 2,
       "BanStatus": 0,
       "Name": "chu quy son",
       "OnlineCv": "http://sample.net/donkey#sea",
@@ -352,24 +352,15 @@
   "Message": [
     {
       "id": 1,
-      "senderId": 3,
-      "receiverId": 2,
-      "content": "mmg",
-      "sentDate": "2023-07-16"
+      "senderId": 2,
+      "receiverId": 3,
+      "content": "mmg"
     },
     {
       "id": 2,
-      "senderId": 2,
-      "receiverId": 2,
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet sapien viverra, egestas leo vitae, auctor felis. Etiam sapien elit, interdum egestas ullamcorper in, dictum sed sem. In eleifend varius condimentum. Sed in orci quis velit auctor placerat. Sed enim ante, elementum ac varius interdum, dapibus ut felis. Nam gravida tristique metus, ultrices malesuada leo sodales eu. Morbi sit amet lobortis tortor, quis eleifend diam. Fusce eget nunc fringilla nisi viverra porta quis non lacus. Etiam quis diam nibh.",
-      "sentDate": "2023-07-16"
-    },
-    {
-      "id": 3,
-      "senderId": 2,
-      "receiverId": 10,
-      "content": "toi nay gap nhau nhe em",
-      "sentDate": "2023-07-16"
+      "senderId": 10,
+      "receiverId": 3,
+      "content": "hehehehehemememeuaiufiadsfjnijasdfkjnlsdgkjnlsgdkjhsdgkjhsdkgjhksdfgjhnkjnfsgdkjsfg\n"
     }
   ],
   "Category": [

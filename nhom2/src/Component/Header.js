@@ -100,7 +100,7 @@ export default function Header() {
                 if (JSON.parse(sessionStorage.getItem("currUser")) != null) {
                   return (
                     <li class="nav-card-item">
-                      <a class="nav-link" href="/Inbox">
+                      <a class="nav-link" href="/">
                         Inbox
                       </a>
                     </li>
