@@ -111,7 +111,6 @@ const JobData = () => {
               />
             </div>
             <div className="job-data row">
-            {/* thay mi cai col thanh row de hien thi cot  */}
               {filteredJobs.map((job) => {
                 const user = users.find((user) => user.id === job.UserId);
                 return (

@@ -15,7 +15,7 @@ const Footer = () => {
       <div style={{padding: "0"}}>
         <footer
           className="text-center text-lg-start text-dark"
-          style={{ backgroundColor: "#f4f4eb" }}
+          style={{ backgroundColor: "#f4f4eb", marginTop: "0px" }}
         >
           <section
             className="d-flex justify-content-between p-4 text-white"

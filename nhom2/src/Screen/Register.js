@@ -85,6 +85,17 @@ const Register = () => {
         Name,
         OnlineCv :"",
         Experience:0,
+    //   Name,
+    //   password,
+    //   email,
+    //   phone,
+    //   address,
+    //   RoleId,
+    //   FieldOfExpertise,
+    //   BanStatus: 0,
+    //   imgPath: "",
+    //   OnlineCv:" ",
+    //   Experience:0,
     };
     if (IsValidate()) {
       fetch("http://localhost:9999/user", {
