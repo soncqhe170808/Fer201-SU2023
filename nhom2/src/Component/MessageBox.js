@@ -46,6 +46,7 @@ export default function MessageBox() {
             setReceiver(
               result.find((u) => u.email === sendToEmail.current.value)
             );
+
           });
       }
     });
@@ -53,7 +54,7 @@ export default function MessageBox() {
       err.style.visibility = "hidden";
     } else {
       err.style.visibility = "visible";
-      setValid(false);
+      setValid(false)
     }
     if (sendToEmail.current.value === "") {
       err.style.visibility = "hidden";
@@ -78,20 +79,11 @@ export default function MessageBox() {
       contentErr.style.visibility = "visible";
     }
     if (valid === true && content.current.value !== "") {
-      var d = new Date();
       const message = {
         id: 0,
         senderId: JSON.parse(sessionStorage.getItem("currUser")).id,
         receiverId: receiver.id,
         content: content.current.value,
-        sentDate:
-          d.getFullYear() +
-          "-" +
-          (d.getMonth() + 1 >= 10
-            ? d.getMonth() + 1
-            : "0" + (d.getMonth() + 1)) +
-          "-" +
-          d.getDate(),
       };
       fetch("http://localhost:9999/Message", {
         method: "POST",

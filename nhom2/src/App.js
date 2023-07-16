@@ -13,7 +13,7 @@ import ProceedJobPost from './Screen/ProceedJobPost';
 import UserApplicationTracking from './Screen/UserApplicationTracking';
 import CompanyJobTracking from './Screen/CompanyJobTracking';
 import AdminDashBoard from './Screen/AdminDashBoard';
-import Inbox from './Screen/Inbox';
+import AddJobScreen from './Screen/AddJob';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -44,7 +44,7 @@ function App() {
         <Route path="/ProceedApplication/:ApplicationId" element={<ProceedApplication />} />
         <Route path='/CompanyJobTracking' element={<CompanyJobTracking/>}/>
         <Route path='/AdminDashBoard' element={<AdminDashBoard/>}/>
-        <Route path='/Inbox' element={<Inbox/>}/>
+        <Route path='/AddJob' element={<AddJobScreen/>}/>
       </Routes>
     </Router>
   );
