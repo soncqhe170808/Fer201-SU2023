@@ -94,7 +94,7 @@
       "address": "167 phùng khắc khoan, sơn tây",
       "Introduction": "Make sure you have followed the necessary steps to integrate the toast notification library properly into your application. Double-check the documentation of the specific toast library you are using for detailed instructions on how to set it up correctly.",
       "fieldOfExpertise": 2,
-      "RoleId": 1,
+      "RoleId": 2,
       "BanStatus": 0,
       "Name": "chu quy son",
       "OnlineCv": "http://sample.net/donkey#sea",
@@ -271,6 +271,17 @@
       "UserId": 1,
       "Cid": 6,
       "Status": 1
+    },
+    {
+      "JobName": "heheheeh",
+      "JobDescription": "heheheehheheheehheheheehheheheehheheheehheheheehheheheehheheheehheheheehheheheeh",
+      "RecuitmentGoal": "123",
+      "PostDate": "2023-07-11",
+      "EndDate": "2023-07-15",
+      "UserID": "",
+      "Cid": 3,
+      "status": 0,
+      "id": 8
     }
   ],
   "JobStatus": [
@@ -355,6 +366,12 @@
       "senderId": 2,
       "receiverId": 3,
       "content": "mmg"
+    },
+    {
+      "id": 2,
+      "senderId": 10,
+      "receiverId": 3,
+      "content": "hehehehehemememeuaiufiadsfjnijasdfkjnlsdgkjnlsgdkjhsdgkjhsdkgjhksdfgjhnkjnfsgdkjsfg\n"
     }
   ],
   "Category": [
