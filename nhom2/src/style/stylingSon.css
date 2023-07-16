@@ -358,3 +358,15 @@ textarea {
     margin: 10px auto !important;
     text-align: left !important;
 }
+.InboxSideBar button{
+    background-color: inherit;
+    color: black;
+    padding: 20px 0;
+    border: none;
+    border-radius: 0;
+}
+.active{
+    background-color: white !important;
+    color: rgb(20, 245, 24) !important;
+
+}
