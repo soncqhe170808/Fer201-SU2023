@@ -42,7 +42,7 @@
       "BanStatus": 0,
       "Name": "chu quy son",
       "OnlineCv": "http://sample.net/donkey#sea",
-      "Experience": "4",
+      "Experience": "5",
       "id": 3
     },
     {
@@ -297,7 +297,7 @@
       "JobId": 4,
       "UserId": 3,
       "ApplyDate": "2023-06-27",
-      "Status": 0
+      "Status": 2
     },
     {
       "id": 2,
@@ -340,54 +340,20 @@
       "UserId": 3,
       "ApplyDate": "2023-07-14",
       "Status": 0
-    }
-  ],
-  "Contact": [
-    {
-      "Contactid": 1,
-      "User1Id": 3,
-      "User2Id": 4
     },
     {
-      "Contactid": 2,
-      "User1Id": 1,
-      "User2Id": 3
-    },
-    {
-      "Contactid": 3,
-      "User1Id": 1,
-      "User2Id": 4
-    },
-    {
-      "Contactid": 4,
-      "User1Id": 2,
-      "User2Id": 4
-    },
-    {
-      "Contactid": 5,
-      "User1Id": 2,
-      "User2Id": 3
+      "id": 8,
+      "JobId": 1,
+      "UserId": 3,
+      "ApplyDate": "2023-07-15",
+      "Status": 0
     }
   ],
   "Message": [
     {
-      "mid": 1,
-      "Contactid": 1,
-      "content": "mmg"
-    },
-    {
-      "mid": 2,
-      "Contactid": 2,
-      "content": "mmg"
-    },
-    {
-      "mid": 3,
-      "Contactid": 3,
-      "content": "mmg"
-    },
-    {
-      "mid": 4,
-      "Contactid": 4,
+      "id": 1,
+      "senderId": 2,
+      "receiverId": 3,
       "content": "mmg"
     }
   ],

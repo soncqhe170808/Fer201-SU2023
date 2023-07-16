@@ -60,35 +60,53 @@ export default function Header() {
                 </NavLink>
               </li>
               {(() => {
-                if (
-                  JSON.parse(sessionStorage.getItem("currUser")) != null &&
-                  JSON.parse(sessionStorage.getItem("currUser")).RoleId == 1
-                ) {
+                if (JSON.parse(sessionStorage.getItem("currUser")) != null) {
+                  
+                  if (
+                    JSON.parse(sessionStorage.getItem("currUser")).RoleId == 1
+                  ) {
+                    return (
+                      <li class="nav-card-item">
+                        <a class="nav-link" href="/UserApplicationTracking">
+                          Applications Tracking
+                        </a>
+                      </li>
+                    );
+                  } else if (
+                    JSON.parse(sessionStorage.getItem("currUser")).RoleId == 2
+                  ) {
+                    return (
+                      <li class="nav-card-item">
+                        <a class="nav-link" href="/CompanyJobTracking">
+                          Job Post Tracking
+                        </a>
+                      </li>
+                    );
+                  } else if (
+                    JSON.parse(sessionStorage.getItem("currUser")).RoleId == 3
+                  ) {
+                    return (
+                      <li class="nav-card-item">
+                        <a class="nav-link" href="/AdminDashBoard">
+                          Admin DashBoard
+                        </a>
+                      </li>
+                    );
+                  }
+                  
+                }
+              })()}
+              {(() => {
+                if (JSON.parse(sessionStorage.getItem("currUser")) != null) {
                   return (
                     <li class="nav-card-item">
-                      <a class="nav-link" href="/UserApplicationTracking">
-                        Applications Tracking
-                      </a>
-                    </li>
-                  );
-                } else if (
-                  JSON.parse(sessionStorage.getItem("currUser")) != null &&
-                  JSON.parse(sessionStorage.getItem("currUser")).RoleId == 2
-                ) {
-                  return (
-                    <li class="nav-card-item">
-                      <a class="nav-link" href="/CompanyJobTracking">
-                        Job Post Tracking
+                      <a class="nav-link" href="/">
+                        Inbox
                       </a>
                     </li>
                   );
                 }
               })()}
-              {/* <li class="nav-card-item">
-                <a class="nav-link" href="blog.html">
-                  Blog
-                </a>
-              </li> */}
             </ul>
             <ul class="right navbar-nav ms-auto">
               <li class="nav-card-item-right">
