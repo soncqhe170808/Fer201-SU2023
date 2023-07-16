@@ -113,7 +113,7 @@
       "BanStatus": 0,
       "Name": "chu quy son",
       "OnlineCv": "http://sample.net/donkey#sea",
-      "Experience": "4",
+      "Experience": "3",
       "id": 8
     },
     {
@@ -318,7 +318,7 @@
       "Status": 0
     },
     {
-      "id": 2,
+      "id": 3,
       "JobId": 4,
       "UserId": 7,
       "ApplyDate": "2023-05-30",
@@ -357,6 +357,13 @@
       "JobId": 1,
       "UserId": 3,
       "ApplyDate": "2023-07-15",
+      "Status": 0
+    },
+    {
+      "id": 9,
+      "JobId": 4,
+      "UserId": 8,
+      "ApplyDate": "2023-07-17",
       "Status": 0
     }
   ],

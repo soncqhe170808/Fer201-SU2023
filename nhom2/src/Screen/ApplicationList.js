@@ -11,40 +11,56 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 export default function ApplicationList() {
-  const {JobId} = useParams();
-  console.log(JobId);
+  const { JobId } = useParams();
   // const JobId = 3;
   const [JobName, setJobName] = useState("");
   const [ApplicationList, setApplicationList] = useState([]);
-  const [UserList, setUser] = useState([]);
+  const [UserList, setUserList] = useState([]);
   const [FieldOfExpertiseList, setFieldOfExpertiseList] = useState([]);
   const [filter, setFilter] = useState(0);
-  const [userEx, setUserEx] = useState([]);
-  const [FoundApp, SetFoundApp] = useState([]);
+  const [aaa, setaaa] = useState([]);
+  const [searchNEmail, SetSearchEmail] = useState("");
+
   // const [AppAndUser, setAppAndUser]
+  const displayList = [];
 
   useEffect(() => {
-    fetch(" http://localhost:9999/Application/")
-      .then((resp) => resp.json())
-      .then((response) => {
-        if (filter === 0) {
-          setApplicationList(response.filter((a) => ((a.JobId == JobId)&&(a.Status == 0))));
-        } else {
-          userEx.map((eu) => {
-            response.map((a) => {
-              if (a.UserId == eu.id && a.JobId == JobId) {
-                console.log("found, aid: " + a.id + ", userid: " + eu.id);
-                SetFoundApp(FoundApp.push(a));
-              }
-            });
-
-            console.log("--------");
-          });
-          setApplicationList(FoundApp);
-          SetFoundApp([]);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:9999/Application/");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
         }
-      });
-  }, [filter]);
+        const data = await response.json();
+
+        // Filter data here
+        const filteredData = data.filter(
+          (a) => a.JobId == JobId && a.Status == 0
+        );
+
+        // Map and create the displayList
+        const displayList = filteredData.map((a) => {
+          const matchingUser = UserList.find((u) => u.id == a.UserId);
+          return {
+            id: a.id,
+            UserId: matchingUser.id,
+            imgPath: matchingUser.imgPath,
+            UserName: matchingUser.Name,
+            fieldOfExpertise: matchingUser.fieldOfExpertise,
+            email: matchingUser.email,
+            Experience: matchingUser.Experience,
+            ApplyDate: a.ApplyDate,
+          };
+        });
+
+
+        setaaa(displayList);
+      } catch (error) {
+      }
+    };
+
+    fetchData();
+  }, [JobId, UserList]);
   useEffect(() => {
     fetch("http://localhost:9999/JobPost/" + JobId)
       .then((resp) => resp.json())
@@ -52,7 +68,7 @@ export default function ApplicationList() {
         setJobName(response.JobName);
       });
   }, []);
-  
+
   useEffect(() => {
     fetch("http://localhost:9999/FieldOfExpertise")
       .then((resp) => resp.json())
@@ -64,129 +80,160 @@ export default function ApplicationList() {
     fetch("http://localhost:9999/user")
       .then((resp) => resp.json())
       .then((response) => {
-        setUser(response);
+        setUserList(response);
       });
   }, []);
 
   const filterByExpertise = (e) => {
-    let ul = UserList;
-    setUserEx(ul.filter((u) => u.fieldOfExpertise == e && u.RoleId == 1));
     setFilter(e);
   };
 
-  const sortApplication = (type) => {
-    const newAppList = [...ApplicationList];
-    if (type === "id") {
-      newAppList.sort((a, b) => a.id - b.id);
-    } else if (type === "yoe") {
-      newAppList.sort((a, b) => a.id - b.id);
-    } else if (type === "recent") {
-      console.log("recent");
-      newAppList.sort((a, b) => (a.ApplyDate > b.ApplyDate ? 1 : -1));
-    } else if (type === "latest") {
-      console.log("latest");
-      newAppList.sort((a, b) => (b.ApplyDate > a.ApplyDate ? 1 : -1));
+  // if (UserList != null && UserList.length > 0) {
+  //   ApplicationList.map((a) => {
+  //     const matchingUser = UserList.find((u) => u.id == a.UserId);
+  //     const displayItem = {
+  //       id: a.id,
+  //       UserId: matchingUser.id,
+  //       imgPath: matchingUser.imgPath,
+  //       UserName: matchingUser.Name,
+  //       fieldOfExpertise: matchingUser.fieldOfExpertise,
+  //       email: matchingUser.email,
+  //       Experience: matchingUser.Experience,
+  //       ApplyDate: a.ApplyDate,
+  //     };
+  //     displayList.push(displayItem);
+  //   });
+  // }
+  const sortApplication = (e) => {
+    const newlist = [...aaa];
+    if (e === "id") {
+      newlist.sort((a, b) => a.id - b.id);
+    } else if (e === "yoe") {
+      console.log("aaaaaaaaaaaaaaaaaa");
+      newlist.sort((a, b) => b.Experience - a.Experience);
+    } else if (e === "oldest") {
+      newlist.sort((a, b) => (a.ApplyDate > b.ApplyDate ? 1 : -1));
+    } else {
+      newlist.sort((a, b) => (a.ApplyDate > b.ApplyDate ? -1 : 1));
     }
-    setApplicationList(newAppList);
+    setaaa(newlist);
   };
-
-  return (
-    <DefaultTemplate>
-      <Container>
-        <Row>
-          <h4>
-            Applications for:{" "}
-            <p style={{ color: "#63ac28", display: "inline-block" }}>
-              {JobName}
-            </p>
-          </h4>
-        </Row>
-        <Row>
-          <div className="searchBar">
-            <form>
-              <input placeholder="   Search Application By Email" />
-              <button type="submit">
-                <FontAwesomeIcon icon={faSearch} />
-              </button>
-            </form>
-            <div className="filterByExpertise">
-              {FieldOfExpertiseList.map((f) => (
-                <span
-                  key={f.id}
-                  onClick={(e) => filterByExpertise(f.id)}
-                  className="field"
-                >
-                  <a>{f.FieldOfExpertise}</a>
-                  <span> | </span>
+  const HandleSearch = (e) => {
+    SetSearchEmail(e);
+  };
+  // useEffect(() => {
+    const finalList = aaa.filter((j) => {
+      console.log(searchNEmail);
+      if (filter == 0) {
+        return 1 == 1 && j.email.includes(searchNEmail);
+      } else {
+        return j.fieldOfExpertise == filter;
+      }
+    });
+  //   setaaa(finalList);
+  // }, [searchNEmail, filter]);
+  console.log(aaa.length);
+  if (aaa.length > 0) {
+    return (
+      <DefaultTemplate>
+        <Container>
+          <Row>
+            <h4>
+              Applications for:{" "}
+              <p style={{ color: "#63ac28", display: "inline-block" }}>
+                {JobName}
+              </p>
+            </h4>
+          </Row>
+          <Row>
+            <div className="searchBar">
+              <form>
+                <input
+                  onChange={(e) => HandleSearch(e.target.value)}
+                  placeholder="   Search Application By Email"
+                />
+                <button type="submit">
+                  <FontAwesomeIcon icon={faSearch} />
+                </button>
+              </form>
+              <div className="filterByExpertise">
+                {FieldOfExpertiseList.map((f) => (
+                  <span
+                    key={f.id}
+                    onClick={(e) => filterByExpertise(f.id)}
+                    className="field"
+                  >
+                    <a>{f.FieldOfExpertise}</a>
+                    <span> | </span>
+                  </span>
+                ))}
+                <span onClick={(e) => filterByExpertise(0)} className="field">
+                  <a>All</a>
                 </span>
-              ))}
-              <span onClick={(e) => filterByExpertise(0)} className="field">
-                <a>All</a>
-              </span>
+              </div>
+              <div className="sortApplication">
+                <h6 style={{ display: "inline-block" }}>
+                  Sort By:{"\u00A0"}
+                  {"\u00A0"}
+                </h6>
+                <select
+                  name="sortType"
+                  style={{ width: "110px", marginTop: "10px" }}
+                  onChange={(e) => sortApplication(e.target.value)}
+                >
+                  <option value={"id"}>Default</option>
+                  <option value={"yoe"}>Years Of Experience</option>
+                  <option value={"oldest"}>Oldest</option>
+                  <option value={"newest"}>Most Recent</option>
+                </select>
+              </div>
             </div>
-            <div className="sortApplication">
-              <h6 style={{ display: "inline-block" }}>
-                Sort By:{"\u00A0"}
-                {"\u00A0"}
-              </h6>
-              <select
-                name="sortType"
-                style={{ width: "110px", marginTop: "10px" }}
-                onChange={(e) => sortApplication(e.target.value)}
-              >
-                <option value={"id"}>Default</option>
-                <option value={"yoe"}>Years Of Experience</option>
-                <option value={"recent"}>Oldest</option>
-                <option value={"latest"}>Most Recent</option>
-              </select>
-            </div>
-          </div>
-        </Row>
-        <Row>
-          {ApplicationList.map((a) =>
-            UserList.map((u) => {
-              if (a.UserId == u.id) {
-                return (
-                  <Link className="proceedLink" to={"/ProceedApplication/"+a.id}>
-                    <div key={a.id} className="Applications col-lg-7 col-sm-12">
-                      <img className="ApplicantImg" src={u.imgPath} />
-                      <div className="applicantInfo">
-                        <h6>
-                          <FontAwesomeIcon icon={faUser} />
-                          {"\u00A0"}
-                          {u.Name}
-                        </h6>
-                        {FieldOfExpertiseList.map((e) => {
-                          if (e.id == u.fieldOfExpertise) {
-                            return (
-                              <h6>
-                                <FontAwesomeIcon icon={faGear} />
-                                {"\u00A0"}
-                                {e.FieldOfExpertise}
-                              </h6>
-                            );
-                          }
-                        })}
-                        <h6>
-                          <FontAwesomeIcon icon={faEnvelope} />
-                          {"\u00A0"}
-                          {u.email}
-                        </h6>
-                        <h6>
-                          <FontAwesomeIcon icon={faCalendarCheck} />
-                          {"\u00A0"}
-                          {a.ApplyDate}
-                        </h6>
-                        <h6>{u.Experience} of Experience</h6>
-                      </div>
+          </Row>
+          <Row>
+            {finalList.map((a) => {
+              return (
+                <Link
+                  className="proceedLink"
+                  to={"/ProceedApplication/" + a.id}
+                >
+                  <div key={a.id} className="Applications col-lg-7 col-sm-12">
+                    <img className="ApplicantImg" src={a.imgPath} />
+                    <div className="applicantInfo">
+                      <h6>
+                        <FontAwesomeIcon icon={faUser} />
+                        {"\u00A0"}
+                        {a.UserName}
+                      </h6>
+                      {FieldOfExpertiseList.map((e) => {
+                        if (e.id == a.fieldOfExpertise) {
+                          return (
+                            <h6>
+                              <FontAwesomeIcon icon={faGear} />
+                              {"\u00A0"}
+                              {e.FieldOfExpertise}
+                            </h6>
+                          );
+                        }
+                      })}
+                      <h6>
+                        <FontAwesomeIcon icon={faEnvelope} />
+                        {"\u00A0"}
+                        {a.email}
+                      </h6>
+                      <h6>
+                        <FontAwesomeIcon icon={faCalendarCheck} />
+                        {"\u00A0"}
+                        {a.ApplyDate}
+                      </h6>
+                      <h6>{a.Experience} of Experience</h6>
                     </div>
-                  </Link>
-                );
-              }
-            })
-          )}
-        </Row>
-      </Container>
-    </DefaultTemplate>
-  );
+                  </div>
+                </Link>
+              );
+            })}
+          </Row>
+        </Container>
+      </DefaultTemplate>
+    );
+  }
 }
