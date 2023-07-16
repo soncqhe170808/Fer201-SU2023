@@ -61,15 +61,19 @@ export default function Header() {
               </li>
               {(() => {
                 if (JSON.parse(sessionStorage.getItem("currUser")) != null) {
-                  
                   if (
                     JSON.parse(sessionStorage.getItem("currUser")).RoleId == 1
                   ) {
                     return (
                       <li class="nav-card-item">
-                        <a class="nav-link" href="/UserApplicationTracking">
+                        <NavLink
+                          to="/UserApplicationTracking"
+                          className={({ isActive }) =>
+                            isActive ? "Active-nav" : "InActive-nav"
+                          }
+                        >
                           Applications Tracking
-                        </a>
+                        </NavLink>
                       </li>
                     );
                   } else if (
@@ -77,9 +81,14 @@ export default function Header() {
                   ) {
                     return (
                       <li class="nav-card-item">
-                        <a class="nav-link" href="/CompanyJobTracking">
+                        <NavLink
+                          to="/CompanyJobTracking"
+                          className={({ isActive }) =>
+                            isActive ? "Active-nav" : "InActive-nav"
+                          }
+                        >
                           Job Post Tracking
-                        </a>
+                        </NavLink>
                       </li>
                     );
                   } else if (
@@ -87,22 +96,31 @@ export default function Header() {
                   ) {
                     return (
                       <li class="nav-card-item">
-                        <a class="nav-link" href="/AdminDashBoard">
+                        <NavLink
+                          to="/AdminDashBoard"
+                          className={({ isActive }) =>
+                            isActive ? "Active-nav" : "InActive-nav"
+                          }
+                        >
                           Admin DashBoard
-                        </a>
+                        </NavLink>
                       </li>
                     );
                   }
-                  
                 }
               })()}
               {(() => {
                 if (JSON.parse(sessionStorage.getItem("currUser")) != null) {
                   return (
                     <li class="nav-card-item">
-                      <a class="nav-link" href="/Inbox">
+                      <NavLink
+                        to="/Inbox"
+                        className={({ isActive }) =>
+                          isActive ? "Active-nav" : "InActive-nav"
+                        }
+                      >
                         Inbox
-                      </a>
+                      </NavLink>
                     </li>
                   );
                 }
