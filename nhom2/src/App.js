@@ -15,6 +15,7 @@ import CompanyJobTracking from './Screen/CompanyJobTracking';
 import AdminDashBoard from './Screen/AdminDashBoard';
 import Inbox from './Screen/Inbox';
 import AddJobScreen from './Screen/AddJob';
+import LoginScreen from './Screen/Login';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -34,7 +35,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/PersonalProfile" element={<PersonalProfile />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginScreen />} />
         <Route path="/JobData" element={<JobData />} />
         <Route path='/UserApplicationTracking' element={<UserApplicationTracking/>}/>
         <Route

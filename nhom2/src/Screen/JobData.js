@@ -44,7 +44,7 @@ const JobData = () => {
       fetch('http://localhost:9999/JobPost')
         .then((response) => response.json())
         .then((data) => {
-          setJobs(data);
+          setJobs(data.filter((d)=>d.Status==3));
           setIsFetched(true);
         })
         .catch((error) => console.log(error));
