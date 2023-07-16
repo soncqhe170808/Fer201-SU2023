@@ -13,7 +13,7 @@ const AddJobScreen = () => {
   const [EndDate, setEndDate] = useState("");
   const [Cid, setCid] = useState("");
   const [userRole, setUserRole] = useState("");
-  const [userId, setUserId] = useState("");
+
   const [status, setStatus] = useState(0);
 
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const AddJobScreen = () => {
       .then((data) => {
         const currentUserRole = data.user[0].RoleId;
         setUserRole(currentUserRole === 2 ? "Company" : "Candidate");
-        setUserId(data.user[0].id); // Set the User ID of the person posting the job
+        
       })
       .catch((error) => {
         console.error("Error fetching user data:", error);
@@ -69,7 +69,7 @@ const AddJobScreen = () => {
       RecuitmentGoal,
       PostDate,
       EndDate,
-      UserID: userId, // Use the userId value
+      UserId: JSON.parse(sessionStorage.getItem("currUser")).id, // Use the userId value
       Cid,
       status,
     };

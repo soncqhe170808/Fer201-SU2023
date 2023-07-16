@@ -271,17 +271,6 @@
       "UserId": 1,
       "Cid": 6,
       "Status": 1
-    },
-    {
-      "JobName": "heheheeh",
-      "JobDescription": "heheheehheheheehheheheehheheheehheheheehheheheehheheheehheheheehheheheehheheheeh",
-      "RecuitmentGoal": "123",
-      "PostDate": "2023-07-11",
-      "EndDate": "2023-07-15",
-      "UserID": "",
-      "Cid": 3,
-      "status": 0,
-      "id": 8
     }
   ],
   "JobStatus": [
